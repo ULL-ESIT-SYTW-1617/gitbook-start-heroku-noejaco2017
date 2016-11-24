@@ -291,7 +291,7 @@ if(argv.h || argv.help){
     "--deploy: Deploy en IaaS(iaas.ull.es)"+
     "--iaasIP: Direccion de la maquina virtual\n"+
     "--iaaspath: Repositorio que va a contener el libro en iaas\n"+
-    "--github: Repositorio a desplegar el libro en git\n"
+    "--github: Repositorio a desplegar el libro en git\n"+
     "--heroku: Nombre de su api en heroku\n");
 
 
@@ -431,7 +431,7 @@ if(argv.h || argv.help){
              var iaasip     = argv.iaasIP || '';
             var iaaspath        = argv.iaaspath || '';
 
-             // 
+             //
             //  ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:argv.name, direcciongit:argv.url, direccionwiki:argv.wiki, autor:argv.autor, email:argv.email,nombreheroku:argv.heroku,direccionip:iaasip,direccionpath:iaaspath},function(err, result) {
             //     // render on success
              //

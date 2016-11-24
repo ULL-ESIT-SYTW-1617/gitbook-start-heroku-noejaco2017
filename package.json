@@ -1,6 +1,6 @@
 {
   "name": "gitbook-start-plugin-general-noejaco17",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Despliegue paquete NPM General",
   "main": "./bin/linea-comando-npm.js",
   "scripts": {
@@ -53,9 +53,6 @@
     "git-url-parse": "^6.0.7",
     "gitbook": "^2.1.0",
     "gitbook-cli": "^0.3.4",
-    "gitbook-start-plugin-heroku-noejaco2017": "0.0.36",
-    "gitbook-start-plugin-iaas-ull-es-noejaco2017": "*",
-    "gitbook-start-team-noejaco2017-2.0": "*",
     "gulp": "~3.9.1",
     "gulp-gh-pages": "^0.5.4",
     "gulp-shell": "~0.5.2",
