@@ -1,7 +1,7 @@
 {
   "name": "gitbook-start-plugin-general-noejaco17",
-  "version": "0.0.10",
-  "description": "Despliegue token heroku oauth",
+  "version": "0.0.11",
+  "description": "Despliegue paquete NPM General",
   "main": "./bin/linea-comando-npm.js",
   "scripts": {
     "generate-gitbook": "./scripts/losh generate-gitbook",
