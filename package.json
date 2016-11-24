@@ -1,6 +1,6 @@
 {
   "name": "gitbook-start-plugin-general-noejaco17",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Despliegue paquete NPM General",
   "main": "./bin/linea-comando-npm.js",
   "scripts": {
@@ -94,6 +94,7 @@
     "inquirer": "^1.2.2",
     "minimatch": "^3.0.3",
     "minimist": "^1.2.0",
+    "octonode": "^0.7.6",
     "passport": "^0.2.2",
     "passport-facebook": "~2.1.1",
     "passport-github": "^1.1.0",
