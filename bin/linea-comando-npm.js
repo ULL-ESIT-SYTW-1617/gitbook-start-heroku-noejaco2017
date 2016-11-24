@@ -291,6 +291,7 @@ if(argv.h || argv.help){
     "--deploy: Deploy en IaaS(iaas.ull.es)"+
     "--iaasIP: Direccion de la maquina virtual\n"+
     "--iaaspath: Repositorio que va a contener el libro en iaas\n"+
+    "--github: Repositorio a desplegar el libro en git\n"
     "--heroku: Nombre de su api en heroku\n");
 
 
@@ -405,6 +406,56 @@ if(argv.h || argv.help){
     if(argv.directorio){
       estructura(argv.directorio);
     }
+    else if(argv.github ){
+
+     estructura(argv.directorio);
+          console.log("Despues de crear estructura");
+
+             child.exec('npm install --save-dev gitbook-start-heroku-token-oauth-noejaco17', function(error, stdout, stderr){
+               if(error)
+                 console.log(error)
+
+               console.log(stderr);
+               console.log(stdout);
+             });
+
+             console.log("TAREA GULP");
+             //añadir las tareas al gulp
+             var heroku_token = require('../node_modules/gitbook-start-heroku-token-oauth-noejaco17/gitbook-start-heroku-token-oauth.js');
+             console.log("VARIABLE HEROKU REQUIRE"+heroku);
+             heroku_token.initialize(argv.directorio);
+
+             console.log("LLEGOOOOOOOOOOO PACKAGE");
+
+
+             var iaasip     = argv.iaasIP || '';
+            var iaaspath        = argv.iaaspath || '';
+
+             // 
+            //  ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:argv.name, direcciongit:argv.url, direccionwiki:argv.wiki, autor:argv.autor, email:argv.email,nombreheroku:argv.heroku,direccionip:iaasip,direccionpath:iaaspath},function(err, result) {
+            //     // render on success
+             //
+            //             if (!err) {
+            //                 // result.nombre=argv.name;
+            //                 // result.direcciongit=argv.url;
+            //                 // result.direccionwiki='argv.wiki';
+            //                  console.log(result);
+            //                      //CREAMOS EL PACKAGE.JSON del template
+             //
+            //                          fs.writeFile(path.join(process.cwd(), `${argv.directorio}`, 'package.json'), result);
+            //                                 if (err) throw err;
+            //                                 console.log('CREADO PACKAGE.JSON');
+             //
+            //             }
+            //             // render or error
+            //             else {
+            //                      console.log('Error renderFile(package.ejs)');
+            //                      console.log(err);
+            //             }
+            //      });
+
+
+      }
     else if(argv.deploy && argv.directorio ){
                          if( argv.iaasIP && argv.iaaspath){//Cuando pasamos el directorio
 
