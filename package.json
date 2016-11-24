@@ -1,5 +1,5 @@
 {
-  "name": "gitbook-start-team-noejaco2017-4.0",
+  "name": "gitbook-start-heroku-token-oauth-noejaco17",
   "version": "0.0.9",
   "description": "Despliegue con pluign Iaas",
   "main": "./bin/linea-comando-npm.js",
