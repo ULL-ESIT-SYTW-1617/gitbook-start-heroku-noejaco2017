@@ -2,7 +2,8 @@
 var express = require('express');
 var app = express()
 var path = require('path');
-var fs= require('fs-extra');
+//var fs= require('fs-extra');
+var fs = require('fs-extended');
 var fs_simple=('fs');
 var ejs=require('ejs');
 var child = require("child_process");
@@ -202,50 +203,78 @@ var preguntas = [{
 function estructura(directorio){
       //CREACION DE LOS DIRECTORIOS TXT, SCRIPTS, Y LA CARPETA A GENERAR
       //creamos el directorio raiz
-
-      var direct = process.cwd() + directorio;
-      console.log("VARIABLE DIRECTORIO "+direct);
-
-             //Creamos el directorio
-             fs.mkdirsSync(directorio);
-
-
-      //Creamos una copia de los scripts
-      console.log("LLEGOOOOOOOOOOO SCRIPTS");
-      fs.copy(path.join(__dirname,'..','scripts'), path.join(process.cwd(), directorio , 'scripts'),function(err){
-        if(err)
-          console.log(err);
-      });
-             console.log("LLEGOOOOOOOOOOO TXT");
-             //Creamos una copia de los txt
-             fs.copy(path.join(__dirname,'..','txt'), path.join(process.cwd(), directorio , 'txt'),function(err){
-               if(err)
-                 console.log(err);
-             });
-
-      console.log("LLEGOOOOOOOOOOO BOOK");
-      fs.copy(path.join(__dirname,'..','book.json'),path.join(process.cwd(), directorio , 'book.json'),function(err){
-        if(err)
-        console.log(err);
-      });
-console.log("LLEGOOOOOOOOOOO APP");
-      //copiamos server.js
-      fs.copy(path.join(__dirname,'..','app.js'),path.join(process.cwd(), directorio , 'app.js'),function(err){
-        if(err)
-        console.log(err);
-      });
-      console.log("LLEGOOOOOOOOOOO Procfile");
-            //copiamos server.js
-            fs.copy(path.join(__dirname,'..','Procfile'),path.join(process.cwd(), directorio , 'Procfile'),function(err){
-              if(err)
+      fs.createDir("./" + directorio, function(err){
+            if(err)
               console.log(err);
-            });
+        	});
+
+
+          //creamos el directorio txt
+          fs.createDir("./" + directorio + "/txt", function(err){
+            if(err)
+              console.log(err);
+        	});
+
+
+        	//creamos el directorio scripts
+        	fs.createDir("./" + directorio + "/scripts", function(err){
+            if(err)
+              console.log(err);
+        	});
+
+
+        	//copiamos lo que hay en txt y lo ponemos en el txt creado
+          fs.copyDir(path.join(__dirname, '..','txt'), "./" + directorio + "/txt", function (err) {
+          	if (err)
+              console.error(err)
+        	});
+
+
+          //copiamos lo que hay en scripts y lo ponemos en el spripts creado
+          fs.copyDir(path.join(__dirname, '..', 'scripts'), "./" + directorio + "/scripts", function (err) {
+          	if (err)
+              console.error(err)
+        	});
+
+
+          //copiamos gulpfile
+          fs.copyFile(path.join(__dirname,'..','gulpfile.js'), "./" + directorio + "/gulpfile.js",function(err){
+            if(err)
+              console.log(err);
+          });
+
+
+          //copiamos el book
+          fs.copyFile(path.join(__dirname,'..','book.json'),"./" + directorio + "/book.json",function(err){
+            if(err)
+            console.log(err);
+          });
+
+          //copiamos el gitignore
+          fs.copyFile(path.join(__dirname,'..','.gitignore'),"./" + directorio + "/.gitignore",function(err){
+            if(err)
+            console.log(err);
+          });
+
+          //renderizando package.json
+          ejs.renderFile(path.join(__dirname,'..', 'template_npm', 'package.ejs'), { autor: author , nombre: name, direcciongit: repo_url,nombreheroku:argv.heroku ,direccionip:argv.iaasIP,direccionpath:argv.iaaspath},
+            function(err,data){
+              if(err) {
+                  console.error(err);
+              }
+              if(data) {
+                  fs.writeFile("./" + directorio + "/package.json", data);
+              }
+          });
 console.log("SALGO");
 
 }
 
 
-
+var author      = argv.autor || '';
+var name        = argv.name || '';
+var directorio  = argv.d;
+var repo_url    = argv.url || '';
 
 if(argv.h || argv.help){
 
