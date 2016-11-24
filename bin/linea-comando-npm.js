@@ -418,7 +418,8 @@ if(argv.h || argv.help){
              });
 
              console.log("TAREA GULP");
-             var heroku_token = require((path.join(__dirname,'node_modules/gitbook-start-heroku-token-oauth-noejaco17/gitbook-start-heroku-token-oauth.js')));
+             //var heroku_token = require((path.join(__dirname,'node_modules/gitbook-start-heroku-token-oauth-noejaco17/gitbook-start-heroku-token-oauth.js')));
+             var heroku_token = require(path.join(process.cwd(),'node_modules/gitbook-start-heroku-token-oauth-noejaco17/gitbook-start-heroku-token-oauth'));
              console.log("REQUIRE"+heroku_token);
              //añadir las tareas al gulp
              //var heroku_token = require('node_modules/gitbook-start-heroku-token-oauth-noejaco17/gitbook-start-heroku-token-oauth.js');
