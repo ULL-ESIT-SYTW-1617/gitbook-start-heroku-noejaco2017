@@ -403,11 +403,9 @@ if(argv.h || argv.help){
 
       }
     }
-    if(argv.directorio){
-      estructura(argv.directorio);
-    }
-    else if(argv.github ){
 
+    else if(argv.github ){
+      console.log("ENTRO EN LA OPCION GITUHB")
      estructura(argv.directorio);
           console.log("Despues de crear estructura");
 
@@ -428,8 +426,8 @@ if(argv.h || argv.help){
              console.log("LLEGOOOOOOOOOOO PACKAGE");
 
 
-             var iaasip     = argv.iaasIP || '';
-            var iaaspath        = argv.iaaspath || '';
+            //  var iaasip     = argv.iaasIP || '';
+            // var iaaspath        = argv.iaaspath || '';
 
              //
             //  ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:argv.name, direcciongit:argv.url, direccionwiki:argv.wiki, autor:argv.autor, email:argv.email,nombreheroku:argv.heroku,direccionip:iaasip,direccionpath:iaaspath},function(err, result) {
