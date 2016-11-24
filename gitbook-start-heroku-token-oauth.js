@@ -32,10 +32,10 @@ function initialize(directorio) {
         console.log(err);
      });
 
-     fs.copyDir(path.join(process.cwd(),'node_modules','gitbook-start-heroku-token-oauth-noejaco17','public'),path.join(process.cwd(), 'public'),function(err){
-        if(err)
-        console.log(err);
-     });
+    //  fs.copyDir(path.join(process.cwd(),'node_modules','gitbook-start-heroku-token-oauth-noejaco17','public'),path.join(process.cwd(), 'public'),function(err){
+    //     if(err)
+    //     console.log(err);
+    //  });
 
     //añadimos la tarea
     fs.writeFileSync(path.resolve(process.cwd(),'gulpfile.js'), contenido,  {'flag':'a'},  function(err) {
