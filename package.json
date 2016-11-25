@@ -1,8 +1,8 @@
 {
   "name": "gitbook-start-plugin-general-noejaco17",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "Despliegue paquete NPM General",
-  "main": "./bin/linea-comando-npm.js",
+  "main": "bin/linea-comando-npm.js",
   "scripts": {
     "generate-gitbook": "./scripts/losh generate-gitbook",
     "generate-wiki": "./scripts/losh generate-wiki",
@@ -15,7 +15,7 @@
     "ssh": "./ssh pull-iaas"
   },
   "bin": {
-    "gitbook-start": "./bin/linea-comando-npm.js"
+    "gitbook-start": "bin/linea-comando-npm.js"
   },
   "repository": {
     "type": "git",
