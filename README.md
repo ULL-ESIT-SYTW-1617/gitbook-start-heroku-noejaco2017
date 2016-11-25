@@ -10,10 +10,7 @@
 ### ayuda
 console.log("gitbook-start [OPTIONS]\n"+
 "--autor: autor del libro a crear node gitbook-star -a AutorDelLibro\n"+
-"--email: email de contacto del usuario\n"+
-"--version: version repositorio github contra el que se va a trabajar -r github.com/repo.git\n"+
 "--url: repositorio github contra el que se va a trabajar -r github.com/repo.git\n"+
-"--wiki: direccion web de la wiki en github -w github.com/repo.wiki.git\n"+
 "--directorio: nombre del directorio a crear\n"+
 "--repo: Crear repositorio en GITHUB\n"+
 "--help: muestra ayuda sobre las opciones disponibles\n"+
@@ -23,7 +20,12 @@ console.log("gitbook-start [OPTIONS]\n"+
 "--github: Repositorio a desplegar el libro en git\n"
 "--heroku: Nombre de su api en heroku\n");
 
-gitbook-star --github d --directorio <nombre>
+###Opcion Github
+
+gitbook-start --github d --directorio <nombre>
+accedemos a la CARPETA
+npm install
+node app.js
 
 ### Objetivo:
 El servidor proveído por el plugin (sea iaaso heroku) deberá autenticar que el lector del libro pertenece a una organización dada de GitHub (por ejemplo ULL-ESIT-SYTW-1617). Si es el caso que pertenece podrá seguir leyendo el libro, sino será redirigido a la ruta de autenticación.
