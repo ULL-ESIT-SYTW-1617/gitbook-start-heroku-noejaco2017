@@ -23,6 +23,29 @@ console.log("gitbook-start [OPTIONS]\n"+
 ###Opcion Github
 
 gitbook-start --github d --directorio <nombre>
+
+Durante el proceso de instalación del directorio con github, nos pedirá por pantalla los siguientes datos:
+
+- nombre de la app -> (Nombre dado a la app generada)
+- token del usuario de heroku ->(Vamos a settings y al final nos aparecera nuestro token Api Key)
+- repositorio de Github -> (http)
+- id_client ->(Para obtener el id_client y el secret_client, deberá crear en github una aplicación. Para ello, acuda a settings en su cuenta de Github, en la parte izquierda por el final encontraremos    OAuth applications, pinche ahí y podremos crear una nueva aplicación)
+- secret_client ->/
+- organizacion->(Organizacion a la que tenga acceso)
+
+###### Generar oauth github
+. Vaya a settings, oauthaplications, y haga lo siguiente:
+* Ponga un nombre a la aplicación
+* Ponga en Homepage URL con el nombre de su app: https://nombre_de_su_app.herokuapp.com/login
+* Añada una descripción (no obligatorio)
+* Ponga en Authorization callback URL  con el nombre de su app respuesta: https://nombre_de_su_app.herokuapp.com/callback
+* Registre su aplicación
+
+---
+heroku git:remote -a <nombre_app>
+gulp deploy-heroku-oauth
+Acuda a la url de la aplicación: https://nombre_app.herokuapp.com/
+
 accedemos a la CARPETA
 npm install
 node app.js
