@@ -49,6 +49,7 @@ Durante el proceso de instalación del directorio con github, nos pedirá por pa
 git init
 heroku git:remote -a <nombre_app>
 genere un .gitignore y dentro ponga node_modules/
+
 gulp deploy-heroku-oauth
 Acuda a la url de la aplicación: https://nombre_app.herokuapp.com/
 
