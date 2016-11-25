@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alu0100836059/Apuntes_SYTW.git",
+    "url": "https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-heroku-noejaco2017",
     "wiki": "https://github.com/alu0100836059/Apuntes_SYTW.wiki.git"
   },
   "keywords": [
@@ -39,7 +39,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ULL-ESIT-SYTW-1617/creacion-de-paquetes-y-modulos-en-nodejs-noejaco2017/issues"
+    "url": "https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-heroku-noejaco2017/issues"
   },
   "homepage": "creacion-de-paquetes-y-modulos-en-nodejs-noejaco2017/README.md",
   "devDependencies": {
@@ -61,6 +61,7 @@
     "gulp-gh-pages": "^0.5.4",
     "gulp-shell": "~0.5.2",
     "minimist": "^1.2.0",
+    "morgan": "^1.7.0",
     "octonode": "^0.7.6",
     "passport": "^0.2.2",
     "passport-github": "^1.1.0",
