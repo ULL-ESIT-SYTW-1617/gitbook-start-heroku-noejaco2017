@@ -22,6 +22,10 @@ console.log("gitbook-start [OPTIONS]\n"+
 
 ###Opcion Github
 
+Instale el paquete NPM de manera global ->  npm install -g gitbook-start-plugin-general-noejaco17
+genere un package.json
+Instale el plugin de oauth -> npm install --save gitbook-start-heroku-token-oauth-noejaco17
+
 gitbook-start --github d --directorio <nombre>
 
 Durante el proceso de instalación del directorio con github, nos pedirá por pantalla los siguientes datos:
