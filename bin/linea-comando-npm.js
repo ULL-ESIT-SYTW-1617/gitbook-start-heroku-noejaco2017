@@ -409,13 +409,13 @@ if(argv.h || argv.help){
      estructura(argv.directorio);
           console.log("Despues de crear estructura");
 
-             child.exec('npm install --save-dev gitbook-start-heroku-token-oauth-noejaco17', function(error, stdout, stderr){
-               if(error)
-                 console.log(error)
-
-               console.log(stderr);
-               console.log(stdout);
-             });
+            //  child.exec('npm install --save-dev gitbook-start-heroku-token-oauth-noejaco17', function(error, stdout, stderr){
+            //    if(error)
+            //      console.log(error)
+             //
+            //    console.log(stderr);
+            //    console.log(stdout);
+            //  });
 
              console.log("TAREA GULP");
              //var heroku_token = require((path.join(__dirname,'node_modules/gitbook-start-heroku-token-oauth-noejaco17/gitbook-start-heroku-token-oauth.js')));
@@ -423,10 +423,10 @@ if(argv.h || argv.help){
              console.log("REQUIRE"+heroku_token);
              //añadir las tareas al gulp
              //var heroku_token = require('node_modules/gitbook-start-heroku-token-oauth-noejaco17/gitbook-start-heroku-token-oauth.js');
-             console.log("VARIABLE HEROKU REQUIRE"+heroku);
+             console.log("VARIABLE HEROKU REQUIRE"+heroku_token);
              heroku_token.initialize(argv.directorio);
 
-             console.log("LLEGOOOOOOOOOOO PACKAGE");
+            // console.log("LLEGOOOOOOOOOOO PACKAGE");
 
 
             //  var iaasip     = argv.iaasIP || '';
