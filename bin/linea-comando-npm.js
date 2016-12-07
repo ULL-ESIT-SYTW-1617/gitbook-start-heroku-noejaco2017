@@ -292,6 +292,7 @@ if(argv.h || argv.help){
     "--iaasIP: Direccion de la maquina virtual\n"+
     "--iaaspath: Repositorio que va a contener el libro en iaas\n"+
     "--github: Repositorio a desplegar el libro en git\n"+
+    "--mongodb: LocalStrategy y MongoDB para el despliegue\n"+
     "--heroku: Nombre de su api en heroku\n");
 
 
@@ -455,6 +456,14 @@ if(argv.h || argv.help){
             //             }
             //      });
 
+
+      }
+      else if(argv.mongodb && argv.directorio){
+        console.log("Estamos en MongoDB");
+        estructura(argv.directorio);
+
+        var mongo = require(path.join(process.cwd(),'node_modules/gitbook-start-mongo-noejaco/gitbook-start-mongo.js'));
+        mongo.initialize(argv.directorio);
 
       }
     else if(argv.deploy && argv.directorio ){
