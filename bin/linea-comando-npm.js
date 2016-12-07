@@ -458,11 +458,13 @@ if(argv.h || argv.help){
 
 
       }
-      else if(argv.mongodb && argv.directorio){
+      else if(argv.mongodb){
         console.log("Estamos en MongoDB");
+        console.log("ARGV.DIR: "+ argv.directorio);
         estructura(argv.directorio);
 
-        var mongo = require(path.join(process.cwd(),'node_modules/gitbook-start-mongo-noejaco/gitbook-start-mongo.js'));
+
+        var mongo = require(path.join(process.cwd(),'node_modules/gitbook-start-mongo-noejaco/gitbook-start-mongo'));
         mongo.initialize(argv.directorio);
 
       }
