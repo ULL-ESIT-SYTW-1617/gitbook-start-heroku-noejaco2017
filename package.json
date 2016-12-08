@@ -1,6 +1,6 @@
 {
   "name": "gitbook-start-plugin-general-noejaco17",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "Despliegue paquete NPM General",
   "main": "bin/linea-comando-npm.js",
   "scripts": {
@@ -72,6 +72,7 @@
   },
   "dependencies": {
     "async": "^1.4.0",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.13.2",
     "child_process": "^1.0.2",
     "connect-ensure-login": "^0.1.1",
@@ -95,8 +96,11 @@
     "inquirer": "^1.2.2",
     "minimatch": "^3.0.3",
     "minimist": "^1.2.0",
+    "mongoose": "^4.6.8",
     "octonode": "^0.7.6",
     "passport": "^0.2.2",
+    "passport-dropbox": "^2.0.0",
+    "passport-local": "^1.0.0",
     "passport-facebook": "~2.1.1",
     "passport-github": "^1.1.0",
     "path": "^0.12.7",
