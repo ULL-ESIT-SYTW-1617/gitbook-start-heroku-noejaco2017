@@ -22,11 +22,11 @@ console.log("gitbook-start [OPTIONS]\n"+
 
 ###Opcion Dropbox
 
-Instale el paquete NPM de manera global ->  npm install -g gitbook-start-plugin-general-noejaco17
+Instale el paquete NPM de manera global ->  npm install -g gitbook-start-plugin-general-noejaco17@0.1.33
 genere un package.json
-Instale el plugin de dropbox -> npm install --save gitbook-start-heroku-localstrategy-noejaco17
+Instale el plugin de dropbox -> npm install --save gitbook-start-heroku-localstrategy-noejaco1720.0.1
 
-gitbook-start --dropbox d --directorio <nombre>
+gitbook-start --dropbox d --directorio "nombre"
 
 Durante el proceso de instalación del directorio con dropbox, nos pedirá por pantalla los siguientes datos:
 
@@ -47,7 +47,7 @@ Instale el paquete NPM de manera global ->  npm install -g gitbook-start-plugin-
 genere un package.json
 Instale el plugin de oauth -> npm install --save gitbook-start-heroku-token-oauth-noejaco17
 
-gitbook-start --github d --directorio <nombre>
+gitbook-start --github d --directorio "nombre"
 
 Durante el proceso de instalación del directorio con github, nos pedirá por pantalla los siguientes datos:
 
@@ -68,7 +68,7 @@ Durante el proceso de instalación del directorio con github, nos pedirá por pa
 
 ---
 git init
-heroku git:remote -a <nombre_app>
+heroku git:remote -a "nombre_app"
 genere un .gitignore y dentro ponga node_modules/
 
 gulp deploy-heroku-oauth
