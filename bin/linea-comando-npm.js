@@ -404,9 +404,8 @@ if(argv.h || argv.help){
 
       }
     }
-
-    else if(argv.github ){
-      console.log("ENTRO EN LA OPCION GITUHB")
+    else if(argv.dropbox ){
+      console.log("ENTRO EN LA OPCION DROPBOX")
      estructura(argv.directorio);
           console.log("Despues de crear estructura");
 
@@ -420,7 +419,7 @@ if(argv.h || argv.help){
 
              console.log("TAREA GULP");
              //var heroku_token = require((path.join(__dirname,'node_modules/gitbook-start-heroku-token-oauth-noejaco17/gitbook-start-heroku-token-oauth.js')));
-             var heroku_token = require(path.join(process.cwd(),'node_modules/gitbook-start-heroku-token-oauth-noejaco17/gitbook-start-heroku-token-oauth'));
+             var heroku_token = require(path.join(process.cwd(),'node_modules/gitbook-start-heroku-localstrategy-noejaco17/gitbook-start-heroku-drop'));
              console.log("REQUIRE"+heroku_token);
              //añadir las tareas al gulp
              //var heroku_token = require('node_modules/gitbook-start-heroku-token-oauth-noejaco17/gitbook-start-heroku-token-oauth.js');
@@ -457,120 +456,172 @@ if(argv.h || argv.help){
             //      });
 
 
-      }
-      else if(argv.mongodb){
-        console.log("Estamos en MongoDB");
-        console.log("ARGV.DIR: "+ argv.directorio);
-        estructura(argv.directorio);
+      }  else if(argv.github ){
+              console.log("ENTRO EN LA OPCION GITUHB")
+             estructura(argv.directorio);
+                  console.log("Despues de crear estructura");
+
+                    //  child.exec('npm install --save-dev gitbook-start-heroku-token-oauth-noejaco17', function(error, stdout, stderr){
+                    //    if(error)
+                    //      console.log(error)
+                     //
+                    //    console.log(stderr);
+                    //    console.log(stdout);
+                    //  });
+
+                     console.log("TAREA GULP");
+                     //var heroku_token = require((path.join(__dirname,'node_modules/gitbook-start-heroku-token-oauth-noejaco17/gitbook-start-heroku-token-oauth.js')));
+                     var heroku_token = require(path.join(process.cwd(),'node_modules/gitbook-start-heroku-token-oauth-noejaco17/gitbook-start-heroku-token-oauth'));
+                     console.log("REQUIRE"+heroku_token);
+                     //añadir las tareas al gulp
+                     //var heroku_token = require('node_modules/gitbook-start-heroku-token-oauth-noejaco17/gitbook-start-heroku-token-oauth.js');
+                     console.log("VARIABLE HEROKU REQUIRE"+heroku_token);
+                     heroku_token.initialize(argv.directorio);
+
+                    // console.log("LLEGOOOOOOOOOOO PACKAGE");
 
 
-        var mongo = require(path.join(process.cwd(),'node_modules/gitbook-start-mongo-noejaco/gitbook-start-mongo'));
-        mongo.initialize(argv.directorio);
+                    //  var iaasip     = argv.iaasIP || '';
+                    // var iaaspath        = argv.iaaspath || '';
 
-      }
-    else if(argv.deploy && argv.directorio ){
-                         if( argv.iaasIP && argv.iaaspath){//Cuando pasamos el directorio
+                     //
+                    //  ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:argv.name, direcciongit:argv.url, direccionwiki:argv.wiki, autor:argv.autor, email:argv.email,nombreheroku:argv.heroku,direccionip:iaasip,direccionpath:iaaspath},function(err, result) {
+                    //     // render on success
+                     //
+                    //             if (!err) {
+                    //                 // result.nombre=argv.name;
+                    //                 // result.direcciongit=argv.url;
+                    //                 // result.direccionwiki='argv.wiki';
+                    //                  console.log(result);
+                    //                      //CREAMOS EL PACKAGE.JSON del template
+                     //
+                    //                          fs.writeFile(path.join(process.cwd(), `${argv.directorio}`, 'package.json'), result);
+                    //                                 if (err) throw err;
+                    //                                 console.log('CREADO PACKAGE.JSON');
+                     //
+                    //             }
+                    //             // render or error
+                    //             else {
+                    //                      console.log('Error renderFile(package.ejs)');
+                    //                      console.log(err);
+                    //             }
+                    //      });
 
-                             estructura(argv.directorio);
-                                  console.log("Despues de crear estructura");
-                                     child.exec('npm install --save-dev gitbook-start-plugin-iaas-ull-es-noejaco2017', function(error, stdout, stderr){
-                                       if(error)
-                                         console.log(error)
 
-                                       console.log(stderr);
-                                       console.log(stdout);
-                                     })
+              }
+              else if(argv.mongodb){
+                console.log("Estamos en MongoDB");
+                console.log("ARGV.DIR: "+ argv.directorio);
+                estructura(argv.directorio);
 
-                                     console.log("TAREA GULP");
-                                     //añadir las tareas al gulp
-                                     var iaas = require(path.join(__dirname,'../node_modules','gitbook-start-plugin-iaas-ull-es-noejaco2017','linea-comando-iaas'));
-                                     iaas.initialize(argv.directorio);
 
-                                     console.log("LLEGOOOOOOOOOOO PACKAGE");
+                var mongo = require(path.join(process.cwd(),'node_modules/gitbook-start-mongo-noejaco/gitbook-start-mongo'));
+                mongo.initialize(argv.directorio);
 
-                                     var heroku        = argv.herokupath || '';
-
-                                       ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:argv.name, direcciongit:argv.url, direccionwiki:argv.wiki, autor:argv.autor, email:argv.email,direccionip:argv.iaasIP,direccionpath:argv.iaaspath,nombreheroku:heroku},function(err, result) {
-                                          // render on success
-
-                                                  if (!err) {
-                                                      // result.nombre=argv.name;
-                                                      // result.direcciongit=argv.url;
-                                                      // result.direccionwiki='argv.wiki';
-                                                       console.log(result);
-                                                           //CREAMOS EL PACKAGE.JSON del template
-
-                                                               fs.writeFile(path.join(process.cwd(), `${argv.directorio}`, 'package.json'), result);
-                                                                      if (err) throw err;
-                                                                      console.log('CREADO PACKAGE.JSON');
-
-                                                  }
-                                                  // render or error
-                                                  else {
-                                                           console.log('Error renderFile(package.ejs)');
-                                                           console.log(err);
-                                                  }
-                                           });
-
-                          }else{
-                                    if(argv.heroku ){
+              }
+            else if(argv.deploy && argv.directorio ){
+                                 if( argv.iaasIP && argv.iaaspath){//Cuando pasamos el directorio
 
                                      estructura(argv.directorio);
                                           console.log("Despues de crear estructura");
-
-                                             child.exec('npm install --save-dev gitbook-start-plugin-heroku-noejaco2017', function(error, stdout, stderr){
+                                             child.exec('npm install --save-dev gitbook-start-plugin-iaas-ull-es-noejaco2017', function(error, stdout, stderr){
                                                if(error)
                                                  console.log(error)
 
                                                console.log(stderr);
                                                console.log(stdout);
-                                             });
+                                             })
 
                                              console.log("TAREA GULP");
                                              //añadir las tareas al gulp
-                                             var heroku = require('../node_modules/gitbook-start-plugin-heroku-noejaco2017/linea-comando-heroku');
-                                             console.log("VARIABLE HEROKU REQUIRE"+heroku);
-                                             heroku.initialize(argv.directorio);
+                                             var iaas = require(path.join(__dirname,'../node_modules','gitbook-start-plugin-iaas-ull-es-noejaco2017','linea-comando-iaas'));
+                                             iaas.initialize(argv.directorio);
 
                                              console.log("LLEGOOOOOOOOOOO PACKAGE");
 
+                                             var heroku        = argv.herokupath || '';
 
-                                             var iaasip     = argv.iaasIP || '';
-                                            var iaaspath        = argv.iaaspath || '';
+                                               ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:argv.name, direcciongit:argv.url, direccionwiki:argv.wiki, autor:argv.autor, email:argv.email,direccionip:argv.iaasIP,direccionpath:argv.iaaspath,nombreheroku:heroku},function(err, result) {
+                                                  // render on success
+
+                                                          if (!err) {
+                                                              // result.nombre=argv.name;
+                                                              // result.direcciongit=argv.url;
+                                                              // result.direccionwiki='argv.wiki';
+                                                               console.log(result);
+                                                                   //CREAMOS EL PACKAGE.JSON del template
+
+                                                                       fs.writeFile(path.join(process.cwd(), `${argv.directorio}`, 'package.json'), result);
+                                                                              if (err) throw err;
+                                                                              console.log('CREADO PACKAGE.JSON');
+
+                                                          }
+                                                          // render or error
+                                                          else {
+                                                                   console.log('Error renderFile(package.ejs)');
+                                                                   console.log(err);
+                                                          }
+                                                   });
+
+                                  }else{
+                                            if(argv.heroku ){
+
+                                             estructura(argv.directorio);
+                                                  console.log("Despues de crear estructura");
+
+                                                     child.exec('npm install --save-dev gitbook-start-plugin-heroku-noejaco2017', function(error, stdout, stderr){
+                                                       if(error)
+                                                         console.log(error)
+
+                                                       console.log(stderr);
+                                                       console.log(stdout);
+                                                     });
+
+                                                     console.log("TAREA GULP");
+                                                     //añadir las tareas al gulp
+                                                     var heroku = require('../node_modules/gitbook-start-plugin-heroku-noejaco2017/linea-comando-heroku');
+                                                     console.log("VARIABLE HEROKU REQUIRE"+heroku);
+                                                     heroku.initialize(argv.directorio);
+
+                                                     console.log("LLEGOOOOOOOOOOO PACKAGE");
 
 
-                                             ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:argv.name, direcciongit:argv.url, direccionwiki:argv.wiki, autor:argv.autor, email:argv.email,nombreheroku:argv.heroku,direccionip:iaasip,direccionpath:iaaspath},function(err, result) {
-                                                // render on success
-
-                                                        if (!err) {
-                                                            // result.nombre=argv.name;
-                                                            // result.direcciongit=argv.url;
-                                                            // result.direccionwiki='argv.wiki';
-                                                             console.log(result);
-                                                                 //CREAMOS EL PACKAGE.JSON del template
-
-                                                                     fs.writeFile(path.join(process.cwd(), `${argv.directorio}`, 'package.json'), result);
-                                                                            if (err) throw err;
-                                                                            console.log('CREADO PACKAGE.JSON');
-
-                                                        }
-                                                        // render or error
-                                                        else {
-                                                                 console.log('Error renderFile(package.ejs)');
-                                                                 console.log(err);
-                                                        }
-                                                 });
+                                                     var iaasip     = argv.iaasIP || '';
+                                                    var iaaspath        = argv.iaaspath || '';
 
 
-                                      }else{
-                                            if(!argv.iaasIP || !argv.iaaspath || !argv.deploy ){
-                                                         console.log("Falta el argumento IP, path o directorio, consulte el help");
-                                            }else if(!argv.heroku){
-                                              console.log("Falta el argumento de heroku, consulte el help");
-                                            }
-                                      }
-                          }
-      }else{
-                  //console.log("Consulte el help FINAL");
-      }
+                                                     ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:argv.name, direcciongit:argv.url, direccionwiki:argv.wiki, autor:argv.autor, email:argv.email,nombreheroku:argv.heroku,direccionip:iaasip,direccionpath:iaaspath},function(err, result) {
+                                                        // render on success
+
+                                                                if (!err) {
+                                                                    // result.nombre=argv.name;
+                                                                    // result.direcciongit=argv.url;
+                                                                    // result.direccionwiki='argv.wiki';
+                                                                     console.log(result);
+                                                                         //CREAMOS EL PACKAGE.JSON del template
+
+                                                                             fs.writeFile(path.join(process.cwd(), `${argv.directorio}`, 'package.json'), result);
+                                                                                    if (err) throw err;
+                                                                                    console.log('CREADO PACKAGE.JSON');
+
+                                                                }
+                                                                // render or error
+                                                                else {
+                                                                         console.log('Error renderFile(package.ejs)');
+                                                                         console.log(err);
+                                                                }
+                                                         });
+
+
+                                              }else{
+                                                    if(!argv.iaasIP || !argv.iaaspath || !argv.deploy ){
+                                                                 console.log("Falta el argumento IP, path o directorio, consulte el help");
+                                                    }else if(!argv.heroku){
+                                                      console.log("Falta el argumento de heroku, consulte el help");
+                                                    }
+                                              }
+                                  }
+              }else{
+                          //console.log("Consulte el help FINAL");
+              }
 }

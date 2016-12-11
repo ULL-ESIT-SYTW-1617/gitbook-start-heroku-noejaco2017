@@ -20,6 +20,27 @@ console.log("gitbook-start [OPTIONS]\n"+
 "--github: Repositorio a desplegar el libro en git\n"
 "--heroku: Nombre de su api en heroku\n");
 
+###Opcion Dropbox
+
+Instale el paquete NPM de manera global ->  npm install -g gitbook-start-plugin-general-noejaco17
+genere un package.json
+Instale el plugin de dropbox -> npm install --save gitbook-start-heroku-localstrategy-noejaco17
+
+gitbook-start --dropbox d --directorio <nombre>
+
+Durante el proceso de instalación del directorio con dropbox, nos pedirá por pantalla los siguientes datos:
+
+- nombre de la app -> (Nombre dado a la app generada)
+- token del usuario de heroku ->(Vamos a settings y al final nos aparecera nuestro token Api Key)
+- token de dropbox ->(Para obtenerlo vamos a dropbox developer, y creamos nuestra app, dentro de ella nos aparecer generated access token)
+- nombre del fichero que actuara de bbdd;
+Luego cree su remoto para empujar ha su app de heroku
+heroku git:remote -a <nombre_app>
+genere un .gitignore y dentro ponga node_modules/
+
+gulp push-heroku
+Acuda a la url de la aplicación: https://nombre_app.herokuapp.com/
+
 ###Opcion Github
 
 Instale el paquete NPM de manera global ->  npm install -g gitbook-start-plugin-general-noejaco17
@@ -53,9 +74,7 @@ genere un .gitignore y dentro ponga node_modules/
 gulp deploy-heroku-oauth
 Acuda a la url de la aplicación: https://nombre_app.herokuapp.com/
 
-accedemos a la CARPETA
-npm install
-node app.js
+
 
 ### Objetivo:
 El servidor proveído por el plugin (sea iaaso heroku) deberá autenticar que el lector del libro pertenece a una organización dada de GitHub (por ejemplo ULL-ESIT-SYTW-1617). Si es el caso que pertenece podrá seguir leyendo el libro, sino será redirigido a la ruta de autenticación.
