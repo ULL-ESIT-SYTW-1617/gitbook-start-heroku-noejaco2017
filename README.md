@@ -111,13 +111,93 @@ En la línea de comandos ingresamos:
 node app.js
 ~~~
 Esto nos permitirá ingresar en el prompt nuestro nombre de usuario y nuestra contraseña, una vez ingresados, correrá el servidor y nos proporcionará información acerca de la ubicación del mismo.
+
 #### Acceso al libro
 Como último paso deberemos acceder a la ubicación del servidor proporcionada en el paso anterior.
 Lo que veremos será una página de logueo en la que haremos click sobre `login` para acceder al libro.
 
 
 
+# Práctica: LocalStrategy y base de datos
 
+
+
+![imagen2][logo2]
+[logo2]: http://1.bp.blogspot.com/-FagQLEI_Zhc/VnAzE9L8e3I/AAAAAAAAAFk/DWPqvL0ZXo8/s1600/mongodb.jpg
+
+
+
+## Descripción de la práctica
+El servidor proveído por el plugin (iaas o heroku) deberá autenticar al lector del libro usando LocalStrategy y una base de datos en la que se guarda información acerca de los usuarios.
+Se utilizará projects de Github en el seguimiento y desarrollo de esta práctica.
+_Nota: Se hará uso de la base de datos ___MongoDB____
+
+
+#### Paquetes necesarios adicionales
+
+  * MongoDB:
+    * [tuto-instalación-ubuntu](http://www.mongodbspain.com/es/2014/08/30/install-mongodb-on-ubuntu-14-04/)
+    * [tuto-instalación-windows](http://es.slideshare.net/MarcoAntonioTuzCastillo/manual-de-como-instalar-mongo-db-en-windows)
+
+### Pasos a seguir:
+
+#### Instalación del plugin
+Una vez instalado el paquete principal, deberemos proveer al mismo de un package.json, para ello escribiremos en consola:
+~~~
+npm init -y
+~~~
+Esto nos generará un package.json, con la opción -y evitamos tener que interactuar con el prompt de npm puesto que en este caso no necesitamos configuración ninguna.
+
+Llegados a este punto ya podemos comenzar con la instalación del plugin dedicado a LocalStrategy y MongoDB, lo haremos mediante el siguiente comando:
+~~~
+[sudo] npm i[nstall] --save gitbook-start-mongo-noejaco
+~~~
+
+Finalizada la instalación podremos ya ejecutar la opción --mongodb de nuestro paquete principal. Para ello escribimos en consola el siguiente comando:
+~~~
+gitbook-start --mongodb mongo --directorio nombre_directorio --heroku nombre_app
+~~~
+Cuando acabe presionaremos la tecla intro y la aplicación nos pedirá por consola los datos de nuestra aplicación así como los de github.
+Una vez introducidos se nos habrá creado el directorio con nombre: nombre_directorio. Deberemos acceder a él (cd nombre_directorio) e instalar los paquetes necesarios a través de:
+~~~
+npm i[nstall]
+~~~
+
+___Nota___: En caso de dar problemas de no encontrar los módulos debido a un conflicto de paquetes, ejecutar su instalación manualmente- Esto puede suceder con un número muy reducido de paquetes. Para su instalación:
+~~~
+npm install --save nombre_paquete
+~~~
+
+Finalizada la instalación tendremos lo necesario para arrancar nuestra aplicación mediante:
+
+Node, de forma local:
+~~~
+node app.js
+~~~
+
+A continuación en el navegador accedemos a: localhost:8080
+
+Heroku:
+~~~
+gulp deploy-heroku-oauth
+~~~
+
+A continuación nos dirigimos a la página oficial de Heroku y accedemos a nuestra aplicación.
+
+
+
+
+### MongoDB with c9
+
+
+
+MongoDB is preinstalled in your workspace. To run MongoDB, run the following below (passing the correct parameters to it). Mongodb data will be stored in the folder data.
+$ mkdir data
+$ echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"' > mongod
+$ chmod a+x mongod
+$ ./mongod -> Dejamos ejecutando la BBDD
+Abrir la base de datos
+$ mongo (show db)(use lista)(show collections)
 
 
 
@@ -146,4 +226,4 @@ Lo que veremos será una página de logueo en la que haremos click sobre `login`
 ## Autores
 [Noé Campos](http://dsi1516.github.io/Practica1/)
 
-[Jacobo](https://ull-esit-sytw-1617.github.io/tareas-iniciales-noejaco2017/)
+[Jacobo Rodicio](http://alu0100836059.github.io/pagina_personal/)
