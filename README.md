@@ -7,18 +7,17 @@
 
 ## Descripción de la práctica
 
-### ayuda
-console.log("gitbook-start [OPTIONS]\n"+
-"--autor: autor del libro a crear node gitbook-star -a AutorDelLibro\n"+
-"--url: repositorio github contra el que se va a trabajar -r github.com/repo.git\n"+
-"--directorio: nombre del directorio a crear\n"+
-"--repo: Crear repositorio en GITHUB\n"+
-"--help: muestra ayuda sobre las opciones disponibles\n"+
-"--deploy: Deploy en IaaS(iaas.ull.es)"+
-"--iaasIP: Direccion de la maquina virtual\n"+
-"--iaaspath: Repositorio que va a contener el libro en iaas\n"+
-"--github: Repositorio a desplegar el libro en git\n"
-"--heroku: Nombre de su api en heroku\n");
+# NUEVAS OPCIONES
+console.log("\ngitbook-start [OPTIONS]\n"+
+"--deploy: Despliega cualquier opcion de las siguietes\n\n"+
+"--deploy crear-repo: Crea repositorio en github\n"+
+"--deploy dropbox: Generara una app(server) donde nos logearemos a traves de una bbdd creada en dropbox en heroku\n"+
+"--deploy github: Generaremos una oauth en github a traves de heroku\n"+
+"--deploy mongodb: Generara una app(server) donde nos logearemos a traves de una bbdd creada en mongodb a traves de heroku\n"+
+"--deploy iaas: Crea server en en iaas\n"+
+"--deploy heroku: Crea server en heroku\n\n"+
+"--directorio <nombre directorio>\n\n\n\n"+
+"\tEJ: gitbook-start --deploy <cualquiera> --directorio <nombre directorio>\n"
 
 ###Opcion Dropbox
 
@@ -26,7 +25,7 @@ Instale el paquete NPM de manera global ->  npm install -g gitbook-start-plugin-
 genere un package.json
 Instale el plugin de dropbox -> npm install --save gitbook-start-heroku-localstrategy-noejaco17@0.0.10
 
-gitbook-start --dropbox d --directorio "nombre"
+gitbook-start --deploy dropbox --directorio "nombre"
 
 Durante el proceso de instalación del directorio con dropbox, nos pedirá por pantalla los siguientes datos:
 
@@ -47,7 +46,7 @@ Instale el paquete NPM de manera global ->  npm install -g gitbook-start-plugin-
 genere un package.json
 Instale el plugin de oauth -> npm install --save gitbook-start-heroku-token-oauth-noejaco17
 
-gitbook-start --github d --directorio "nombre"
+gitbook-start --deploy github --directorio "nombre"
 
 Durante el proceso de instalación del directorio con github, nos pedirá por pantalla los siguientes datos:
 
@@ -155,7 +154,7 @@ Llegados a este punto ya podemos comenzar con la instalación del plugin dedicad
 
 Finalizada la instalación podremos ya ejecutar la opción --mongodb de nuestro paquete principal. Para ello escribimos en consola el siguiente comando:
 ~~~
-gitbook-start --mongodb mongo --directorio nombre_directorio --heroku nombre_app
+gitbook-start --deploy mongodb --directorio nombre_directorio --heroku nombre_app
 ~~~
 Cuando acabe presionaremos la tecla intro y la aplicación nos pedirá por consola los datos de nuestra aplicación así como los de github.
 Una vez introducidos se nos habrá creado el directorio con nombre: nombre_directorio. Deberemos acceder a él (cd nombre_directorio) e instalar los paquetes necesarios a través de:
