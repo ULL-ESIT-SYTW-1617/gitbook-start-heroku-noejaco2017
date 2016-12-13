@@ -22,9 +22,9 @@ console.log("gitbook-start [OPTIONS]\n"+
 
 ###Opcion Dropbox
 
-Instale el paquete NPM de manera global ->  npm install -g gitbook-start-plugin-general-noejaco17@0.1.33
+Instale el paquete NPM de manera global ->  npm install -g gitbook-start-plugin-general-noejaco17@0.1.36
 genere un package.json
-Instale el plugin de dropbox -> npm install --save gitbook-start-heroku-localstrategy-noejaco1720.0.1
+Instale el plugin de dropbox -> npm install --save gitbook-start-heroku-localstrategy-noejaco17@0.0.10
 
 gitbook-start --dropbox d --directorio "nombre"
 
