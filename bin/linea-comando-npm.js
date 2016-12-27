@@ -435,6 +435,11 @@ if(argv.h || argv.help){
                                               //   console.log(stdout);
                                               // });
 
+
+
+                                              ////////////////////////
+                                              // PROBLEMA RUTA mirar: pwd()
+                                              //////////////////
                                               console.log("TAREA GULP");
                                               //añadir las tareas al gulp
                                               //var heroku = require('../node_modules/gitbook-start-plugin-heroku-noejaco2017/linea-comando-heroku');
