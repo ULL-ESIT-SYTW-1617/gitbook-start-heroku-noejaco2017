@@ -422,18 +422,18 @@ if(argv.h || argv.help){
                                            console.log("Despues de crear estructura");
 
                                               //child.exec('npm install --save gitbook-start-plugin-heroku-noejaco2017', function(error, stdout, stderr){
-                                                child.exec('npm install --save gitbook-start-heroku-noejaco-final', function(error, stdout, stderr){
-                                                if(error)
-                                                  console.log(error)
-
-                                                console.log(stderr);
-                                                console.log(stdout);
-                                              });
+                                              //   child.exec('npm install --save gitbook-start-heroku-noejaco-final', function(error, stdout, stderr){
+                                              //   if(error)
+                                              //     console.log(error)
+                                              //
+                                              //   console.log(stderr);
+                                              //   console.log(stdout);
+                                              // });
 
                                               console.log("TAREA GULP");
                                               //añadir las tareas al gulp
                                               //var heroku = require('../node_modules/gitbook-start-plugin-heroku-noejaco2017/linea-comando-heroku');
-                                              var heroku = require('../node_modules/gitbook-start-heroku-noejaco-final/heroku-command');
+                                              var heroku = require('./node_modules/gitbook-start-heroku-noejaco-final/heroku-command.js');
                                               console.log("VARIABLE HEROKU REQUIRE"+heroku);
                                               heroku.initialize(argv.directorio);
 
