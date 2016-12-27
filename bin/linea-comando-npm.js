@@ -420,7 +420,11 @@ if(argv.h || argv.help){
       }else if(argv.deploy == 'heroku'){
                                       estructura(argv.directorio);
                                            console.log("Despues de crear estructura");
-                                           var caca = path.join(__dirname, '/node_modules','gitbook-start-heroku-noejaco-final','heroku-command');
+                                          //  var caca = path.join(__dirname, '/node_modules','gitbook-start-heroku-noejaco-final')+'heroku-command.js';
+
+                                          var caca = path.join(__dirname, '/node_modules','gitbook-start-heroku-noejaco-final','heroku-command.js');
+
+
                                            console.log("-- path a heroku-command" + caca);
                                               //child.exec('npm install --save gitbook-start-plugin-heroku-noejaco2017', function(error, stdout, stderr){
                                               //   child.exec('npm install --save gitbook-start-heroku-noejaco-final', function(error, stdout, stderr){

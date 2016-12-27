@@ -1,6 +1,6 @@
 {
   "name": "gitbook-start-plugin-general-noejaco17",
-  "version": "0.1.43",
+  "version": "0.1.44",
   "description": "Despliegue paquete NPM General",
   "main": "bin/linea-comando-npm.js",
   "scripts": {
