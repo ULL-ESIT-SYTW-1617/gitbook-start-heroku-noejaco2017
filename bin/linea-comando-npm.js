@@ -421,7 +421,8 @@ if(argv.h || argv.help){
                                       estructura(argv.directorio);
                                            console.log("Despues de crear estructura");
 
-                                              child.exec('npm install --save-dev gitbook-start-plugin-heroku-noejaco2017', function(error, stdout, stderr){
+                                              //child.exec('npm install --save gitbook-start-plugin-heroku-noejaco2017', function(error, stdout, stderr){
+                                                child.exec('npm install --save gitbook-start-plugin-heroku-noejaco-final', function(error, stdout, stderr){
                                                 if(error)
                                                   console.log(error)
 
@@ -431,7 +432,8 @@ if(argv.h || argv.help){
 
                                               console.log("TAREA GULP");
                                               //añadir las tareas al gulp
-                                              var heroku = require('../node_modules/gitbook-start-plugin-heroku-noejaco2017/linea-comando-heroku');
+                                              //var heroku = require('../node_modules/gitbook-start-plugin-heroku-noejaco2017/linea-comando-heroku');
+                                              var heroku = require('../node_modules/gitbook-start-plugin-heroku-noejaco-final/heroku-command');
                                               console.log("VARIABLE HEROKU REQUIRE"+heroku);
                                               heroku.initialize(argv.directorio);
 
@@ -440,8 +442,9 @@ if(argv.h || argv.help){
 
 
                                                 preguntas2();
-
-                                              ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:name, direcciongit:url,  autor:author,direccionip:iaasip,direccionpath:iaaspath,nombreheroku:appheroku},function(err, result) {
+                                                console.log("\nDespués de preguntas2::: \n");
+                                              //ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:name, direcciongit:url,  autor:author,direccionip:iaasip,direccionpath:iaaspath,nombreheroku:appheroku},function(err, result) {
+                                                ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:name, direcciongit:url,  autor:author,direccionip:iaasip,direccionpath:iaaspath,nombreheroku:appheroku},function(err, result) {
                                                  // render on success
 
                                                          if (!err) {
