@@ -18,6 +18,11 @@ var inquirer = require('inquirer');
 var client = github.client();
 
 
+//MINIMIST
+ var argv = require('minimist')(process.argv.slice(2));
+ console.dir(argv);
+
+
 
 ////////////////
 var author;
@@ -119,9 +124,14 @@ function preguntas(){
 //--------------------------------------------------
 
 
-//MINIMIST
- var argv = require('minimist')(process.argv.slice(2));
- console.dir(argv);
+
+
+
+
+
+
+
+
 
 
 function estructura(directorio){
