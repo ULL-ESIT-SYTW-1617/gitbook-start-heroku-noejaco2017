@@ -472,15 +472,15 @@ if(argv.h || argv.help){
 
 
                                           //  console.log("-- path a heroku-command" + test);
-
-                                                child.exec('npm install --save gitbook-start-heroku-noejaco-final', function(error, stdout, stderr){
-                                                if(error)
-                                                  console.log(error)
-
-                                                console.log("\nInstalando plugin heroku...\n");
-                                                console.log(stderr);
-                                                console.log(stdout);
-                                              });
+                                              // 
+                                              //   child.exec('npm install --save gitbook-start-heroku-noejaco-final', function(error, stdout, stderr){
+                                              //   if(error)
+                                              //     console.log(error)
+                                              //
+                                              //   console.log("\nInstalando plugin heroku...\n");
+                                              //   console.log(stderr);
+                                              //   console.log(stdout);
+                                              // });
 
                                               console.log("TAREA GULP");
                                               //añadir las tareas al gulp
