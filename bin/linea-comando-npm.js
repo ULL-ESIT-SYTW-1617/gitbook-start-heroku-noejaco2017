@@ -13,49 +13,69 @@ var github = require('octonode');
 var inquirer = require('inquirer');
 //var org = github.Organization('bulletjs');
 //var org = github.Organization('bulletjs');
-const prompt = require('prompt');
 
 //
 var client = github.client();
-// var ghme = client.me();
-function preguntas2(){
-prompt.get([{
-       name: 'nombre_paquete',
-       //required: true
-     },{
-       name: 'url',
-       //required: true
-     },{
-         name: 'iaas_ip',
-         require: true
-     },{
-         name: 'iaas_path',
-         require: true
 
-     },{
-         name: 'nombre_heroku',
-         require: true
-     },{
-         name: 'author',
-         require: true
-     },], function (err, result) {
-     //
-     // Log the results.
-     //
-     console.log('  nombre paquete: ' + result.nombre_paquete);
-     console.log('  url repo: ' + result.url);
-     console.log('  iaas_path: ' + result.iaas_ip);
-     console.log('  nombre heroku ' + result.iaas_path);
-     console.log('  author ' + result.nombre_heroku);
-     console.log('  author ' + result.author);
-      author=result.author;
-      name=result.nombre_paquete;
-      repo_url=result.url;
-      iaasip= result.iaas_ip;
-      iaaspath=result.iaas_path;
-      appheroku=result.nombre_heroku;
-   });
-}
+
+
+////////////////
+var author;
+var name;
+var directorio;
+var repo_url;
+var iaasip;
+var iaaspath;
+var appheroku;
+var url_wiki;
+////////////////
+
+// Para el package.EJS dependiendo de la entrada permitimos ''
+var iaaspath = argv.iaaspath || '';
+var iaasIP = argv.iaasIP || '';
+var appheroku = argv.heroku || '';
+
+
+
+// var ghme = client.me();
+// function preguntas2(){
+// prompt.get([{
+//        name: 'nombre_paquete',
+//        //required: true
+//      },{
+//        name: 'url',
+//        //required: true
+//      },{
+//          name: 'iaas_ip',
+//          require: true
+//      },{
+//          name: 'iaas_path',
+//          require: true
+//
+//      },{
+//          name: 'nombre_heroku',
+//          require: true
+//      },{
+//          name: 'author',
+//          require: true
+//      },], function (err, result) {
+//      //
+//      // Log the results.
+//      //
+//      console.log('  nombre paquete: ' + result.nombre_paquete);
+//      console.log('  url repo: ' + result.url);
+//      console.log('  iaas_path: ' + result.iaas_ip);
+//      console.log('  nombre heroku ' + result.iaas_path);
+//      console.log('  author ' + result.nombre_heroku);
+//      console.log('  author ' + result.author);
+//       author=result.author;
+//       name=result.nombre_paquete;
+//       repo_url=result.url;
+//       iaasip= result.iaas_ip;
+//       iaaspath=result.iaas_path;
+//       appheroku=result.nombre_heroku;
+//    });
+// }
 ////
 var datos_usuario = [
     {
@@ -161,7 +181,7 @@ function estructura(directorio){
           // });
 
           //renderizando package.json
-          ejs.renderFile(path.join(__dirname,'..', 'template_npm', 'package.ejs'), { autor: author , nombre: name, direcciongit: repo_url,nombreheroku:argv.heroku ,direccionip:argv.iaasIP,direccionpath:argv.iaaspath},
+          ejs.renderFile(path.join(__dirname,'..', 'template_npm', 'package.ejs'), { autor: author , nombre: name, direcciongit: repo_url, dirwiki: url_wiki, nombreheroku:appheroku ,direccionip:iaasIP,direccionpath:iaaspath},
             function(err,data){
               if(err) {
                   console.error(err);
@@ -174,15 +194,6 @@ console.log("SALGO");
 
 }
 
-
-var author;
-var name;
-var directorio;
-var repo_url;
-var iaasip;
-var iaaspath;
-var appheroku;
-var url_wiki;
 
 if(argv.h || argv.help){
 
@@ -467,7 +478,7 @@ if(argv.h || argv.help){
                                               //var heroku = require('./node_modules/gitbook-start-heroku-noejaco-final/heroku-command');
                                               var heroku = require(path.join(process.cwd(),'node_modules/gitbook-start-heroku-noejaco-final/heroku-command'));
                                               console.log("VARIABLE HEROKU REQUIRE"+heroku);
-                                              heroku.initialize(argv.directorio);
+                                              // heroku.initialize(argv.directorio);
 
                                               console.log("LLEGOOOOOOOOOOO PACKAGE");
                                               ////
@@ -478,21 +489,22 @@ if(argv.h || argv.help){
                                               url_wiki = result.url_wiki
                                               author=result.author;
 
-                                                ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:name, direcciongit:repo_url,  autor:author,direccionip:"",direccionpath:"",nombreheroku:""},function(err, salida) {
-                                                if (!err) {
-                                                      console.log("salida - :"+salida);
-                                                      //CREAMOS EL PACKAGE.JSON del template
-                                                      // Si todo va bien sobreescribimos el package.json con el generado por el template
-                                                      fs.writeFile(path.join(process.cwd(), `${argv.directorio}`, 'package.json'), salida);
-                                                             if (err) throw err;
-                                                             console.log('CREADO PACKAGE.JSON');
-
-                                                      }
-                                                      else {
-                                                          console.log('Error renderFile(package.ejs)');
-                                                          console.log(err);
-                                                           }
-                                                  });
+                                              heroku.initialize(argv.directorio);
+                                                // ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:name, direcciongit:repo_url,  autor:author,direccionip:"",direccionpath:"",nombreheroku:""},function(err, salida) {
+                                                // if (!err) {
+                                                //       console.log("salida - :"+salida);
+                                                //       //CREAMOS EL PACKAGE.JSON del template
+                                                //       // Si todo va bien sobreescribimos el package.json con el generado por el template
+                                                //       fs.writeFile(path.join(process.cwd(), `${argv.directorio}`, 'package.json'), salida);
+                                                //              if (err) throw err;
+                                                //              console.log('CREADO PACKAGE.JSON');
+                                                //
+                                                //       }
+                                                //       else {
+                                                //           console.log('Error renderFile(package.ejs)');
+                                                //           console.log(err);
+                                                //            }
+                                                //   });
                                             });
       }else{
               console.log("NO HA INTRODUCIDO NINGUNA OPCION CONSULTE: gitbook-start --help");
