@@ -24,15 +24,15 @@ var author;
 var name;
 var directorio;
 var repo_url;
-var iaasip;
-var iaaspath;
-var appheroku;
+// var iaasip;
+// var iaaspath;
+// var appheroku;
 var url_wiki;
 ////////////////
 
 // Para el package.EJS dependiendo de la entrada permitimos ''
 var iaaspath = argv.iaaspath || '';
-var iaasIP = argv.iaasIP || '';
+var iaasip = argv.iaasIP || '';
 var appheroku = argv.heroku || '';
 
 
@@ -181,7 +181,7 @@ function estructura(directorio){
           // });
 
           //renderizando package.json
-          ejs.renderFile(path.join(__dirname,'..', 'template_npm', 'package.ejs'), { autor: author , nombre: name, direcciongit: repo_url, dirwiki: url_wiki, nombreheroku:appheroku ,direccionip:iaasIP,direccionpath:iaaspath},
+          ejs.renderFile(path.join(__dirname,'..', 'template_npm', 'package.ejs'), { autor: author , nombre: name, direcciongit: repo_url, dirwiki: url_wiki, nombreheroku:appheroku ,direccionip:iaasip,direccionpath:iaaspath},
             function(err,data){
               if(err) {
                   console.error(err);
