@@ -13,6 +13,7 @@ var github = require('octonode');
 var inquirer = require('inquirer');
 //var org = github.Organization('bulletjs');
 //var org = github.Organization('bulletjs');
+const prompt = require('prompt');
 
 //
 var client = github.client();
@@ -55,7 +56,30 @@ prompt.get([{
       appheroku=result.nombre_heroku;
    });
 }
+////
+var datos_usuario = [
+    {
+      name: 'nombre_paquete',
+      message: "Introduzca un nombre para su aplicación\n",
+      default: "Libro web"
+     },
+     {
+       name: 'url',
+       message: "Introduzca la URL de su repositorio git\n",
+       require: true
+     },
+     {
+       name: 'url_wiki',
+       message: "Introduzca la URL de su wiki.\n"+
+                "Si no está interesado en el despliegue de su wiki pulse intro",
+     },
+     {
+      name: 'author',
+      message: "Introduzca el nombre del autor:",
+      require: true
 
+    },];
+////
 
 
 function preguntas(){
@@ -158,6 +182,7 @@ var repo_url;
 var iaasip;
 var iaaspath;
 var appheroku;
+var url_wiki;
 
 if(argv.h || argv.help){
 
@@ -419,27 +444,23 @@ if(argv.h || argv.help){
                                                      });
       }else if(argv.deploy == 'heroku'){
                                       estructura(argv.directorio);
-                                           console.log("Despues de crear estructura");
-                                          //  var caca = path.join(__dirname, '/node_modules','gitbook-start-heroku-noejaco-final')+'heroku-command.js';
-
-                                          var test = path.join(path.join(process.cwd(),'node_modules/gitbook-start-heroku-noejaco-final/heroku-command'));
-
-
-                                           console.log("-- path a heroku-command" + test);
-
-                                              //   child.exec('npm install --save gitbook-start-heroku-noejaco-final', function(error, stdout, stderr){
-                                              //   if(error)
-                                              //     console.log(error)
-                                              //
-                                              //   console.log(stderr);
-                                              //   console.log(stdout);
-                                              // });
+                                          //  console.log("Despues de crear estructura");
+                                          // //  var caca = path.join(__dirname, '/node_modules','gitbook-start-heroku-noejaco-final')+'heroku-command.js';
+                                          //
+                                          // var test = path.join(path.join(process.cwd(),'node_modules/gitbook-start-heroku-noejaco-final/heroku-command'));
 
 
+                                          //  console.log("-- path a heroku-command" + test);
 
-                                              ////////////////////////
-                                              // PROBLEMA RUTA mirar: pwd()
-                                              //////////////////
+                                                child.exec('npm install --save gitbook-start-heroku-noejaco-final', function(error, stdout, stderr){
+                                                if(error)
+                                                  console.log(error)
+
+                                                console.log("\nInstalando plugin heroku...\n");
+                                                console.log(stderr);
+                                                console.log(stdout);
+                                              });
+
                                               console.log("TAREA GULP");
                                               //añadir las tareas al gulp
                                               //var heroku = require('../node_modules/gitbook-start-plugin-heroku-noejaco2017/linea-comando-heroku');
@@ -449,33 +470,30 @@ if(argv.h || argv.help){
                                               heroku.initialize(argv.directorio);
 
                                               console.log("LLEGOOOOOOOOOOO PACKAGE");
+                                              ////
 
+                                              inquirer.prompt(datos_usuario).then(function(result){
+                                              name=result.nombre_paquete;
+                                              repo_url=result.url;
+                                              url_wiki = result.url_wiki
+                                              author=result.author;
 
+                                                ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:name, direcciongit:repo_url,  autor:author,direccionip:"",direccionpath:"",nombreheroku:""},function(err, salida) {
+                                                if (!err) {
+                                                      console.log("salida - :"+salida);
+                                                      //CREAMOS EL PACKAGE.JSON del template
+                                                      // Si todo va bien sobreescribimos el package.json con el generado por el template
+                                                      fs.writeFile(path.join(process.cwd(), `${argv.directorio}`, 'package.json'), salida);
+                                                             if (err) throw err;
+                                                             console.log('CREADO PACKAGE.JSON');
 
-                                                preguntas2();
-                                                console.log("\nDespués de preguntas2::: \n");
-                                              //ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:name, direcciongit:url,  autor:author,direccionip:iaasip,direccionpath:iaaspath,nombreheroku:appheroku},function(err, result) {
-                                                ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:name, direcciongit:url,  autor:author,direccionip:iaasip,direccionpath:iaaspath,nombreheroku:appheroku},function(err, result) {
-                                                 // render on success
-
-                                                         if (!err) {
-                                                             // result.nombre=argv.name;
-                                                             // result.direcciongit=argv.url;
-                                                             // result.direccionwiki='argv.wiki';
-                                                              console.log(result);
-                                                                  //CREAMOS EL PACKAGE.JSON del template
-
-                                                                      fs.writeFile(path.join(process.cwd(), `${argv.directorio}`, 'package.json'), result);
-                                                                             if (err) throw err;
-                                                                             console.log('CREADO PACKAGE.JSON');
-
-                                                         }
-                                                         // render or error
-                                                         else {
-                                                                  console.log('Error renderFile(package.ejs)');
-                                                                  console.log(err);
-                                                         }
+                                                      }
+                                                      else {
+                                                          console.log('Error renderFile(package.ejs)');
+                                                          console.log(err);
+                                                           }
                                                   });
+                                            });
       }else{
               console.log("NO HA INTRODUCIDO NINGUNA OPCION CONSULTE: gitbook-start --help");
             }
