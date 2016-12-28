@@ -422,11 +422,11 @@ if(argv.h || argv.help){
                                            console.log("Despues de crear estructura");
                                           //  var caca = path.join(__dirname, '/node_modules','gitbook-start-heroku-noejaco-final')+'heroku-command.js';
 
-                                          var caca = path.join(__dirname, '/node_modules','gitbook-start-heroku-noejaco-final','heroku-command.js');
+                                          var test = path.join(path.join(process.cwd(),'node_modules/gitbook-start-heroku-noejaco-final/heroku-command'));
 
 
-                                           console.log("-- path a heroku-command" + caca);
-                                              //child.exec('npm install --save gitbook-start-plugin-heroku-noejaco2017', function(error, stdout, stderr){
+                                           console.log("-- path a heroku-command" + test);
+
                                               //   child.exec('npm install --save gitbook-start-heroku-noejaco-final', function(error, stdout, stderr){
                                               //   if(error)
                                               //     console.log(error)
@@ -444,7 +444,7 @@ if(argv.h || argv.help){
                                               //añadir las tareas al gulp
                                               //var heroku = require('../node_modules/gitbook-start-plugin-heroku-noejaco2017/linea-comando-heroku');
                                               //var heroku = require('./node_modules/gitbook-start-heroku-noejaco-final/heroku-command');
-                                              var heroku = require(path.join(__dirname,'/node_modules','gitbook-start-heroku-noejaco-final','heroku-command'));
+                                              var heroku = require(path.join(process.cwd(),'node_modules/gitbook-start-heroku-noejaco-final/heroku-command'));
                                               console.log("VARIABLE HEROKU REQUIRE"+heroku);
                                               heroku.initialize(argv.directorio);
 
