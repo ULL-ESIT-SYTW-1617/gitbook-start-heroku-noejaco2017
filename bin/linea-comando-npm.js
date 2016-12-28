@@ -500,21 +500,21 @@ if(argv.h || argv.help){
                                               author=result.author;
 
                                               heroku.initialize(argv.directorio);
-                                                // ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:name, direcciongit:repo_url,  autor:author,direccionip:"",direccionpath:"",nombreheroku:""},function(err, salida) {
-                                                // if (!err) {
-                                                //       console.log("salida - :"+salida);
-                                                //       //CREAMOS EL PACKAGE.JSON del template
-                                                //       // Si todo va bien sobreescribimos el package.json con el generado por el template
-                                                //       fs.writeFile(path.join(process.cwd(), `${argv.directorio}`, 'package.json'), salida);
-                                                //              if (err) throw err;
-                                                //              console.log('CREADO PACKAGE.JSON');
-                                                //
-                                                //       }
-                                                //       else {
-                                                //           console.log('Error renderFile(package.ejs)');
-                                                //           console.log(err);
-                                                //            }
-                                                //   });
+                                                ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:name, direcciongit:repo_url, dirwiki: url_wiki, autor:author,direccionip:"",direccionpath:"",nombreheroku:""},function(err, salida) {
+                                                if (!err) {
+                                                      console.log("salida - :"+salida);
+                                                      //CREAMOS EL PACKAGE.JSON del template
+                                                      // Si todo va bien sobreescribimos el package.json con el generado por el template
+                                                      fs.writeFile(path.join(process.cwd(), `${argv.directorio}`, 'package.json'), salida);
+                                                             if (err) throw err;
+                                                             console.log('CREADO PACKAGE.JSON');
+
+                                                      }
+                                                      else {
+                                                          console.log('Error renderFile(package.ejs)');
+                                                          console.log(err);
+                                                           }
+                                                  });
                                             });
       }else{
               console.log("NO HA INTRODUCIDO NINGUNA OPCION CONSULTE: gitbook-start --help");
