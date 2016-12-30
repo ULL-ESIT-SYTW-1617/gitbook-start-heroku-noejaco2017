@@ -18,7 +18,7 @@ gulp.task('deploy', ['build-gitbook', 'empujar-libro'], function () {
 });
 
 gulp.task('build-gitbook', function() {
-  return gulp.src('').pipe(shell(['gitbook install; ./scripts/generate-gitbook']));
+  return gulp.src('').pipe(shell(['./scripts/generate-gitbook']));
 });
 
 gulp.task('wiki-deploy', ['wiki-build'], function() {
