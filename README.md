@@ -16,10 +16,14 @@ console.log("\ngitbook-start [OPTIONS]\n"+
 "--deploy mongodb: Generara una app(server) donde nos logearemos a traves de una bbdd creada en mongodb a traves de heroku\n"+
 "--deploy iaas: Crea server en en iaas\n"+
 "--deploy heroku: Crea server en heroku\n\n"+
+"--deploy iaasheroku: Despliega el libro tanto en iaas como en heroku\n\n"+
 "--directorio <nombre directorio>\n\n\n\n"+
 "\tEJ: gitbook-start --deploy <cualquiera> --directorio <nombre directorio>\n"
 
-###Opcion Dropbox
+### Opcion Iaas y heroku deokigue del libro
+Descargar el paquete npm gitbook-start-iaas-npm
+
+### Opcion Dropbox
 
 Instale el paquete NPM de manera global ->  npm install -g gitbook-start-plugin-general-noejaco17@0.1.36
 genere un package.json

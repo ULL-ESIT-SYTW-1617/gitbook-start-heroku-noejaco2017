@@ -216,6 +216,7 @@ if(argv.h || argv.help){
     "--deploy mongodb: Generara una app(server) donde nos logearemos a traves de una bbdd creada en mongodb a traves de heroku\n"+
     "--deploy iaas: Crea server en en iaas\n"+
     "--deploy heroku: Crea server en heroku\n\n"+
+    "--deploy iaasheroku: Despliega el libro tanto en iaas como en heroku\n\n"+
     "--directorio <nombre directorio>\n\n\n\n"+
     "\tEJ: gitbook-start --deploy <cualquiera> --directorio <nombre directorio>\n"
     );
@@ -402,6 +403,15 @@ if(argv.h || argv.help){
                                   //      });
 
     }
+    else if(argv.deploy == 'iaasheroku'){
+      console.log("Estamos en IAASHEROKU NPM");
+      console.log("ARGV.DIR: "+ argv.directorio);
+      estructura(argv.directorio);
+
+      var iaas_heroku = require(path.join(process.cwd(),'node_modules/plugin-ssh-npm-noejaco17/gitbook-start-iaas-npm'));
+      iaas_heroku.initialize(argv.directorio);
+
+    }
     else if(argv.deploy == 'mongodb'){
                                   console.log("Estamos en MongoDB");
                                   console.log("ARGV.DIR: "+ argv.directorio);
@@ -472,7 +482,7 @@ if(argv.h || argv.help){
 
 
                                           //  console.log("-- path a heroku-command" + test);
-                                              // 
+                                              //
                                               //   child.exec('npm install --save gitbook-start-heroku-noejaco-final', function(error, stdout, stderr){
                                               //   if(error)
                                               //     console.log(error)
