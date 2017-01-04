@@ -172,10 +172,10 @@ function estructura(directorio){
 
 
           //copiamos gulpfile
-          fs.copyFile(path.join(__dirname,'..','gulpfile.js'), "./" + directorio + "/gulpfile.js",function(err){
-            if(err)
-              console.log(err);
-          });
+          // fs.copyFile(path.join(__dirname,'..','gulpfile.js'), "./" + directorio + "/gulpfile.js",function(err){
+          //   if(err)
+          //     console.log(err);
+          // });
 
 
           //copiamos el book
