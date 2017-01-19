@@ -497,14 +497,15 @@ if(argv.h || argv.help){
 
                                   console.log("LLEGOOOOOOOOOOO PACKAGE");
                                   ////
-
+                                  mongo.initialize(argv.directorio);
+                                  console.log("Datos para libro");
                                   inquirer.prompt(datos_usuario).then(function(result){
                                   name=result.nombre_paquete;
                                   repo_url=result.url;
                                   url_wiki = result.url_wiki
                                   author=result.author;
 
-                                  mongo.initialize(argv.directorio);
+                                  // mongo.initialize(argv.directorio);
                                     ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:name, direcciongit:repo_url, dirwiki: url_wiki, autor:author,direccionip:"",direccionpath:"",nombreheroku:""},function(err, salida) {
                                     if (!err) {
                                           console.log("salida - :"+salida);
