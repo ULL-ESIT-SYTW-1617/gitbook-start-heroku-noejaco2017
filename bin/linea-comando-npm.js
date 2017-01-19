@@ -240,8 +240,8 @@ if(argv.h || argv.help){
     "--deploy iaas: Crea server en en iaas\n"+
     "--deploy heroku: Crea server en heroku\n\n"+
     "--deploy iaasheroku: Despliega el libro tanto en iaas como en heroku\n\n"+
+    "--deploy final: Despliega la aplicación en heroku gestionando la bdd a través de mLab y permitiendo diversos tipos de autenticación\n\n"+
     "--directorio <nombre directorio>\n\n\n\n"+
-    "--final proyecto: Despliega la aplicación en heroku gestionando la bdd a través de mLab y permitiendo diversos tipos de autenticación\n\n"+
     "\tEJ: gitbook-start --deploy <cualquiera> --directorio <nombre directorio>\n"
     );
 
