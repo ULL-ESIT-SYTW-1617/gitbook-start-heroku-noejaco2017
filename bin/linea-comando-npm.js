@@ -241,6 +241,7 @@ if(argv.h || argv.help){
     "--deploy heroku: Crea server en heroku\n\n"+
     "--deploy iaasheroku: Despliega el libro tanto en iaas como en heroku\n\n"+
     "--directorio <nombre directorio>\n\n\n\n"+
+    "--final proyecto: Despliega la aplicación en heroku gestionando la bdd a través de mLab y permitiendo diversos tipos de autenticación\n\n"+
     "\tEJ: gitbook-start --deploy <cualquiera> --directorio <nombre directorio>\n"
     );
 
@@ -440,6 +441,49 @@ if(argv.h || argv.help){
                                   console.log("ARGV.DIR: "+ argv.directorio);
                                   estructura(argv.directorio);
                                   var mongo = require(path.join(process.cwd(),'node_modules/gitbook-start-mongo-noejaco/gitbook-start-mongo'));
+                                  mongo.initialize(argv.directorio);
+
+                                  //////////////////////////////////////////////
+                                  //console.log("TAREA GULP");
+                                  //añadir las tareas al gulp
+                                  //var heroku = require('../node_modules/gitbook-start-plugin-heroku-noejaco2017/linea-comando-heroku');
+                                  //var heroku = require('./node_modules/gitbook-start-heroku-noejaco-final/heroku-command');
+                                  //var heroku = require(path.join(process.cwd(),'node_modules/gitbook-start-heroku-noejaco-final/heroku-command'));
+                                  //console.log("VARIABLE HEROKU REQUIRE"+heroku);
+                                  // heroku.initialize(argv.directorio);
+
+                                  console.log("LLEGOOOOOOOOOOO PACKAGE");
+                                  ////
+
+                                  inquirer.prompt(datos_usuario).then(function(result){
+                                  name=result.nombre_paquete;
+                                  repo_url=result.url;
+                                  url_wiki = result.url_wiki
+                                  author=result.author;
+
+                                  mongo.initialize(argv.directorio);
+                                    ejs.renderFile(path.join(__dirname, '../template_npm', 'package.ejs'),{nombre:name, direcciongit:repo_url, dirwiki: url_wiki, autor:author,direccionip:"",direccionpath:"",nombreheroku:""},function(err, salida) {
+                                    if (!err) {
+                                          console.log("salida - :"+salida);
+                                          //CREAMOS EL PACKAGE.JSON del template
+                                          // Si todo va bien sobreescribimos el package.json con el generado por el template
+                                          fs.writeFile(path.join(process.cwd(), `${argv.directorio}`, 'package.json'), salida);
+                                                 if (err) throw err;
+                                                 console.log('CREADO PACKAGE.JSON');
+
+                                          }
+                                          else {
+                                              console.log('Error renderFile(package.ejs)');
+                                              console.log(err);
+                                               }
+                                      });
+                                });
+    }
+    else if(argv.deploy == 'final'){
+                                  console.log("Estamos en Final_proyecto");
+                                  console.log("ARGV.DIR: "+ argv.directorio);
+                                  estructura(argv.directorio);
+                                  var mongo = require(path.join(process.cwd(),'node_modules/gitbook-start-proyectofinal-noejaco/gitbook-start-mongo'));
                                   mongo.initialize(argv.directorio);
 
                                   //////////////////////////////////////////////
