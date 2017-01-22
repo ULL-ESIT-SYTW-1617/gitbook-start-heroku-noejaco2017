@@ -483,7 +483,7 @@ if(argv.h || argv.help){
                                   console.log("Estamos en Final_proyecto");
                                   console.log("ARGV.DIR: "+ argv.directorio);
                                   estructura(argv.directorio);
-                                  var mongo = require(path.join(process.cwd(),'node_modules/gitbook-start-proyectofinal-noejaco/gitbook-start-mongo'));
+                                  var mongo = require(path.join(process.cwd(),'node_modules/gitbook-start-proyectofinal-noejaco17/gitbook-start-mongo'));
                                   mongo.initialize(argv.directorio);
 
                                   //////////////////////////////////////////////
