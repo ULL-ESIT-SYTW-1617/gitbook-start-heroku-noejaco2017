@@ -1,0 +1,180 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@2.14.12
+3 info using node@v4.3.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'C:\\Users\\Jacobo\\Documents\\GitHub\\SYTW\\GENERAL_FINAL',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\Jacobo\AppData\Roaming\npm-cache\gitbook-start-plugin-general-noejaco17\0.4.48\package.tgz not in flight; packing
+9 verbose tar pack [ 'C:\\Users\\Jacobo\\AppData\\Roaming\\npm-cache\\gitbook-start-plugin-general-noejaco17\\0.4.48\\package.tgz',
+9 verbose tar pack   'C:\\Users\\Jacobo\\Documents\\GitHub\\SYTW\\GENERAL_FINAL' ]
+10 verbose tarball C:\Users\Jacobo\AppData\Roaming\npm-cache\gitbook-start-plugin-general-noejaco17\0.4.48\package.tgz
+11 verbose folder C:\Users\Jacobo\Documents\GitHub\SYTW\GENERAL_FINAL
+12 info prepublish gitbook-start-plugin-general-noejaco17@0.4.48
+13 verbose addLocalTarball adding from inside cache C:\Users\Jacobo\AppData\Roaming\npm-cache\gitbook-start-plugin-general-noejaco17\0.4.48\package.tgz
+14 silly cache afterAdd gitbook-start-plugin-general-noejaco17@0.4.48
+15 verbose afterAdd C:\Users\Jacobo\AppData\Roaming\npm-cache\gitbook-start-plugin-general-noejaco17\0.4.48\package\package.json not in flight; writing
+16 verbose afterAdd C:\Users\Jacobo\AppData\Roaming\npm-cache\gitbook-start-plugin-general-noejaco17\0.4.48\package\package.json written
+17 silly publish { name: 'gitbook-start-plugin-general-noejaco17',
+17 silly publish   version: '0.4.48',
+17 silly publish   description: 'Despliegue paquete NPM General',
+17 silly publish   main: 'bin/linea-comando-npm.js',
+17 silly publish   scripts:
+17 silly publish    { 'generate-gitbook': './scripts/losh generate-gitbook',
+17 silly publish      'generate-wiki': './scripts/losh generate-wiki',
+17 silly publish      build: 'npm install && npm i gitbook-cli && npm run generate-gitbook && npm run generate-wiki',
+17 silly publish      'deploy-gitbook': './scripts/losh deploy-gitbook',
+17 silly publish      'deploy-wiki': './scripts/losh deploy-wiki',
+17 silly publish      deploy: 'npm run build && npm run deploy-gitbook && npm run deploy-wiki',
+17 silly publish      version: './scripts/losh version',
+17 silly publish      test: 'echo "Error: no test specified" && exit 1',
+17 silly publish      ssh: './ssh pull-iaas' },
+17 silly publish   bin: { 'gitbook-start': 'bin/linea-comando-npm.js' },
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'git+https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-heroku-noejaco2017.git',
+17 silly publish      wiki: 'https://github.com/alu0100836059/Apuntes_SYTW.wiki.git' },
+17 silly publish   keywords: [ 'gitbook', 'boilerplate', 'starter' ],
+17 silly publish   author:
+17 silly publish    { name: 'alu0100622492',
+17 silly publish      email: 'alu0100622492@ull.edu.es',
+17 silly publish      url: 'http://dsi1516.github.io/Practica1/' },
+17 silly publish   contributors:
+17 silly publish    { name: 'alu0100836059',
+17 silly publish      email: 'alu0100836059@ull.edu.es',
+17 silly publish      url: 'http://dsi1516.github.io/Practica1/' },
+17 silly publish   license: 'MIT',
+17 silly publish   bugs: { url: 'https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-heroku-noejaco2017/issues' },
+17 silly publish   homepage: 'http://creacion-de-paquetes-y-modulos-en-nodejs-noejaco2017/README.md',
+17 silly publish   devDependencies:
+17 silly publish    { async: '^1.4.0',
+17 silly publish      'body-parser': '^1.13.2',
+17 silly publish      child_process: '^1.0.2',
+17 silly publish      'connect-ensure-login': '^0.1.1',
+17 silly publish      'cookie-parser': '^1.3.5',
+17 silly publish      ejs: '^2.5.2',
+17 silly publish      express: '^4.14.0',
+17 silly publish      'express-session': '^1.11.3',
+17 silly publish      fs: '0.0.1-security',
+17 silly publish      'fs-extra': '^0.22.1',
+17 silly publish      'gh-pages': '^0.3.1',
+17 silly publish      'git-url-parse': '^6.0.7',
+17 silly publish      gitbook: '^2.1.0',
+17 silly publish      'gitbook-cli': '^0.3.4',
+17 silly publish      gulp: '~3.9.1',
+17 silly publish      'gulp-gh-pages': '^0.5.4',
+17 silly publish      'gulp-shell': '~0.5.2',
+17 silly publish      minimist: '^1.2.0',
+17 silly publish      morgan: '^1.7.0',
+17 silly publish      octonode: '^0.7.6',
+17 silly publish      passport: '^0.2.2',
+17 silly publish      'passport-github': '^1.1.0',
+17 silly publish      path: '^0.12.7',
+17 silly publish      'simple-git': '^1.51.0',
+17 silly publish      'ssh-exec': '^2.0.0',
+17 silly publish      underscore: '^1.8.3' },
+17 silly publish   dependencies:
+17 silly publish    { async: '^1.4.0',
+17 silly publish      'bcrypt-nodejs': '0.0.3',
+17 silly publish      'body-parser': '^1.13.2',
+17 silly publish      child_process: '^1.0.2',
+17 silly publish      'connect-ensure-login': '^0.1.1',
+17 silly publish      'cookie-parser': '^1.3.5',
+17 silly publish      ejs: '*',
+17 silly publish      express: '^4.14.0',
+17 silly publish      'express-ejs-layouts': '^2.2.0',
+17 silly publish      'express-session': '^1.14.2',
+17 silly publish      fs: '0.0.1-security',
+17 silly publish      'fs-extended': '^0.2.1',
+17 silly publish      'fs-extra': '^0.22.1',
+17 silly publish      'gh-pages': '^0.3.1',
+17 silly publish      gitbook: '^2.1.0',
+17 silly publish      'gitbook-cli': '^0.3.4',
+17 silly publish      'graceful-fs': '^4.1.0',
+17 silly publish      gulp: '^3.9.1',
+17 silly publish      'gulp-gh-pages': '^0.5.4',
+17 silly publish      'gulp-install': '~0.6.0',
+17 silly publish      'gulp-run': '^1.7.1',
+17 silly publish      'gulp-shell': '^0.5.2',
+17 silly publish      inquirer: '^1.2.2',
+17 silly publish      minimatch: '^3.0.3',
+17 silly publish      minimist: '^1.2.0',
+17 silly publish      mongoose: '^4.6.8',
+17 silly publish      octonode: '^0.7.6',
+17 silly publish      passport: '^0.2.2',
+17 silly publish      'passport-dropbox': '^2.0.0',
+17 silly publish      'passport-facebook': '~2.1.1',
+17 silly publish      'passport-github': '^1.1.0',
+17 silly publish      'passport-local': '^1.0.0',
+17 silly publish      path: '^0.12.7',
+17 silly publish      'serve-static': '^1.11.1',
+17 silly publish      'ssh-exec': '^2.0.0',
+17 silly publish      underscore: '^1.8.3',
+17 silly publish      url: '^0.11.0' },
+17 silly publish   engines: { node: '0.10.x' },
+17 silly publish   readme: '# Práctica: Plugin General gitbook-start npm\r\n\r\n\r\n![imagen1][logo]\r\n[logo]: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQmTdns2SIHRywqRrwjOmWCewbAPJKjv5s_iblApWlTryhkwB1n\r\n\r\n\r\n## Descripción de la práctica\r\n\r\n# NUEVAS OPCIONES\r\nconsole.log("\\ngitbook-start [OPTIONS]\\n"+\r\n"--deploy: Despliega cualquier opcion de las siguietes\\n\\n"+\r\n"--deploy crear-repo: Crea repositorio en github\\n"+\r\n"--deploy dropbox: Generara una app(server) donde nos logearemos a traves de una bbdd creada en dropbox en heroku\\n"+\r\n"--deploy github: Generaremos una oauth en github a traves de heroku\\n"+\r\n"--deploy mongodb: Generara una app(server) donde nos logearemos a traves de una bbdd creada en mongodb a traves de heroku\\n"+\r\n"--deploy iaas: Crea server en en iaas\\n"+\r\n"--deploy heroku: Crea server en heroku\\n\\n"+\r\n"--deploy iaasheroku: Despliega el libro tanto en iaas como en heroku\\n\\n"+\r\n"--directorio <nombre directorio>\\n\\n\\n\\n"+\r\n"\\tEJ: gitbook-start --deploy <cualquiera> --directorio <nombre directorio>\\n"\r\n\r\n### Opcion Iaas y heroku deokigue del libro\r\nDescargar el paquete npm gitbook-start-iaas-npm\r\n\r\n### Opcion Dropbox\r\n\r\nInstale el paquete NPM de manera global ->  npm install -g gitbook-start-plugin-general-noejaco17@0.1.36\r\ngenere un package.json\r\nInstale el plugin de dropbox -> npm install --save gitbook-start-heroku-localstrategy-noejaco17@0.0.10\r\n\r\ngitbook-start --deploy dropbox --directorio "nombre"\r\n\r\nDurante el proceso de instalación del directorio con dropbox, nos pedirá por pantalla los siguientes datos:\r\n\r\n- nombre de la app -> (Nombre dado a la app generada)\r\n- token del usuario de heroku ->(Vamos a settings y al final nos aparecera nuestro token Api Key)\r\n- token de dropbox ->(Para obtenerlo vamos a dropbox developer, y creamos nuestra app, dentro de ella nos aparecer generated access token)\r\n- nombre del fichero que actuara de bbdd;\r\nLuego cree su remoto para empujar ha su app de heroku\r\nheroku git:remote -a <nombre_app>\r\ngenere un .gitignore y dentro ponga node_modules/\r\n\r\ngulp push-heroku\r\nAcuda a la url de la aplicación: https://nombre_app.herokuapp.com/\r\n\r\n###Opcion Github\r\n\r\nInstale el paquete NPM de manera global ->  npm install -g gitbook-start-plugin-general-noejaco17\r\ngenere un package.json\r\nInstale el plugin de oauth -> npm install --save gitbook-start-heroku-token-oauth-noejaco17\r\n\r\ngitbook-start --deploy github --directorio "nombre"\r\n\r\nDurante el proceso de instalación del directorio con github, nos pedirá por pantalla los siguientes datos:\r\n\r\n- nombre de la app -> (Nombre dado a la app generada)\r\n- token del usuario de heroku ->(Vamos a settings y al final nos aparecera nuestro token Api Key)\r\n- repositorio de Github -> (http)\r\n- id_client ->(Para obtener el id_client y el secret_client, deberá crear en github una aplicación. Para ello, acuda a settings en su cuenta de Github, en la parte izquierda por el final encontraremos    OAuth applications, pinche ahí y podremos crear una nueva aplicación)\r\n- secret_client ->/\r\n- organizacion->(Organizacion a la que tenga acceso)\r\n\r\n###### Generar oauth github\r\n. Vaya a settings, oauthaplications, y haga lo siguiente:\r\n* Ponga un nombre a la aplicación\r\n* Ponga en Homepage URL con el nombre de su app: https://nombre_de_su_app.herokuapp.com/login\r\n* Añada una descripción (no obligatorio)\r\n* Ponga en Authorization callback URL  con el nombre de su app respuesta: https://nombre_de_su_app.herokuapp.com/callback\r\n* Registre su aplicación\r\n\r\n---\r\ngit init\r\nheroku git:remote -a "nombre_app"\r\ngenere un .gitignore y dentro ponga node_modules/\r\n\r\ngulp deploy-heroku-oauth\r\nAcuda a la url de la aplicación: https://nombre_app.herokuapp.com/\r\n\r\n\r\n\r\n### Objetivo:\r\nEl servidor proveído por el plugin (sea iaaso heroku) deberá autenticar que el lector del libro pertenece a una organización dada de GitHub (por ejemplo ULL-ESIT-SYTW-1617). Si es el caso que pertenece podrá seguir leyendo el libro, sino será redirigido a la ruta de autenticación.\r\n\r\nPuede partir de los repos de los plugins que ha usado en prácticas anteriores o crear unos nuevos\r\n\r\n\r\n### Pasos a seguir:\r\n\r\n#### Instalación del plugin\r\nPara ello nos serviremos del paquete [npm-gitbook-start](https://www.npmjs.com/package/gitbook-start-team-noejaco2017-2.0) y seguiremos las instrucciones indicadas.\r\n\r\nUna vez finalizado este paso, tendremos un servidor Express desplegado en la IP indicada así como nuevas tareas añadidas al fichero __gulpfile.js__.\r\n#### Paquetes necesarios\r\nDeberemos contar con Node.js y npm instalados en nuestra máquina.\r\n\r\nInstalación de los paquetes y dependencias necesarias para el correcto funcionamiento:\r\n~~~\r\n$ npm install\r\n~~~\r\n\r\n#### Despliegue del libro\r\nA continuación debemos desplegar el libro a través de la nueva tarea generada.\r\n\r\nPara ello ejecutamos por consola:\r\n~~~\r\n$ gulp deploy\r\n~~~\r\n\r\n\r\n#### Desplegar el servidor Express\r\nEn la línea de comandos ingresamos:\r\n~~~\r\nnode app.js\r\n~~~\r\nEsto nos permitirá ingresar en el prompt nuestro nombre de usuario y nuestra contraseña, una vez ingresados, correrá el servidor y nos proporcionará información acerca de la ubicación del mismo.\r\n\r\n#### Acceso al libro\r\nComo último paso deberemos acceder a la ubicación del servidor proporcionada en el paso anterior.\r\nLo que veremos será una página de logueo en la que haremos click sobre `login` para acceder al libro.\r\n\r\n\r\n\r\n# Práctica: LocalStrategy y base de datos\r\n\r\n\r\n\r\n![imagen2][logo2]\r\n[logo2]: http://1.bp.blogspot.com/-FagQLEI_Zhc/VnAzE9L8e3I/AAAAAAAAAFk/DWPqvL0ZXo8/s1600/mongodb.jpg\r\n\r\n\r\n\r\n## Descripción de la práctica\r\nEl servidor proveído por el plugin (iaas o heroku) deberá autenticar al lector del libro usando LocalStrategy y una base de datos en la que se guarda información acerca de los usuarios.\r\nSe utilizará projects de Github en el seguimiento y desarrollo de esta práctica.\r\n_Nota: Se hará uso de la base de datos ___MongoDB____\r\n\r\n\r\n#### Paquetes necesarios adicionales\r\n\r\n  * MongoDB:\r\n    * [tuto-instalación-ubuntu](http://www.mongodbspain.com/es/2014/08/30/install-mongodb-on-ubuntu-14-04/)\r\n    * [tuto-instalación-windows](http://es.slideshare.net/MarcoAntonioTuzCastillo/manual-de-como-instalar-mongo-db-en-windows)\r\n\r\n### Pasos a seguir:\r\n\r\n#### Instalación del plugin\r\nUna vez instalado el paquete principal, deberemos proveer al mismo de un package.json, para ello escribiremos en consola:\r\n~~~\r\nnpm init -y\r\n~~~\r\nEsto nos generará un package.json, con la opción -y evitamos tener que interactuar con el prompt de npm puesto que en este caso no necesitamos configuración ninguna.\r\n\r\nLlegados a este punto ya podemos comenzar con la instalación del plugin dedicado a LocalStrategy y MongoDB, lo haremos mediante el siguiente comando:\r\n~~~\r\n[sudo] npm i[nstall] --save gitbook-start-mongo-noejaco\r\n~~~\r\n\r\nFinalizada la instalación podremos ya ejecutar la opción --mongodb de nuestro paquete principal. Para ello escribimos en consola el siguiente comando:\r\n~~~\r\ngitbook-start --deploy mongodb --directorio nombre_directorio --heroku nombre_app\r\n~~~\r\nCuando acabe presionaremos la tecla intro y la aplicación nos pedirá por consola los datos de nuestra aplicación así como los de github.\r\nUna vez introducidos se nos habrá creado el directorio con nombre: nombre_directorio. Deberemos acceder a él (cd nombre_directorio) e instalar los paquetes necesarios a través de:\r\n~~~\r\nnpm i[nstall]\r\n~~~\r\n\r\n___Nota___: En caso de dar problemas de no encontrar los módulos debido a un conflicto de paquetes, ejecutar su instalación manualmente- Esto puede suceder con un número muy reducido de paquetes. Para su instalación:\r\n~~~\r\nnpm install --save nombre_paquete\r\n~~~\r\n\r\nFinalizada la instalación tendremos lo necesario para arrancar nuestra aplicación mediante:\r\n\r\nNode, de forma local:\r\n~~~\r\nnode app.js\r\n~~~\r\n\r\nA continuación en el navegador accedemos a: localhost:8080\r\n\r\nHeroku:\r\n~~~\r\ngulp deploy-heroku-oauth\r\n~~~\r\n\r\nA continuación nos dirigimos a la página oficial de Heroku y accedemos a nuestra aplicación.\r\n\r\n\r\n\r\n\r\n### MongoDB with c9\r\n\r\n\r\n\r\nMongoDB is preinstalled in your workspace. To run MongoDB, run the following below (passing the correct parameters to it). Mongodb data will be stored in the folder data.\r\n$ mkdir data\r\n$ echo \'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"\' > mongod\r\n$ chmod a+x mongod\r\n$ ./mongod -> Dejamos ejecutando la BBDD\r\nAbrir la base de datos\r\n$ mongo (show db)(use lista)(show collections)\r\n\r\n\r\n\r\n\r\n## Enlaces:\r\n##### Enlace al libro desplegado en gh-pages\r\n[gh-pages](https://ull-esit-sytw-1617.github.io/tareas-iniciales-noejaco2017/)\r\n\r\n##### Enlace a gitbook\r\n[gitbook](https://alu0100836059.gitbooks.io/apuntes_sytw_16_17/content/)\r\n\r\n##### Enlace a npm gitbook-start-2.0\r\n[npm-gitbook-start](https://www.npmjs.com/package/gitbook-start-team-noejaco2017-2.0)\r\n\r\n##### Enlace a npm plugin Heroku\r\n[npm-heroku](https://www.npmjs.com/package/gitbook-start-plugin-heroku-noejaco2017)\r\n\r\n##### Enlace al paquete npm iaas\r\n[npm-plugin-iaas](https://www.npmjs.com/package/gitbook-start-plugin-iaas-ull-es-noejaco2017)\r\n\r\n##### Enlace a la aplicación desplegada en heroku\r\n[heroku](https://herokuiaass.herokuapp.com/)\r\n\r\n\r\n\r\n## Autores\r\n[Noé Campos](http://dsi1516.github.io/Practica1/)\r\n\r\n[Jacobo Rodicio](http://alu0100836059.github.io/pagina_personal/)\r\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: 'a885d69bb391e664bf784c9c0f16752e461ea823',
+17 silly publish   _id: 'gitbook-start-plugin-general-noejaco17@0.4.48',
+17 silly publish   _shasum: 'd11fb3228e06edd56ae3f68277a7f3c4a1ba4732',
+17 silly publish   _from: '.' }
+18 verbose getPublishConfig undefined
+19 silly mapToRegistry name gitbook-start-plugin-general-noejaco17
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/gitbook-start-plugin-general-noejaco17
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading C:\Users\Jacobo\AppData\Roaming\npm-cache\gitbook-start-plugin-general-noejaco17\0.4.48\package.tgz
+25 verbose request uri https://registry.npmjs.org/gitbook-start-plugin-general-noejaco17
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 23:59:54
+28 verbose request using bearer token for auth
+29 verbose request id 6e88164b9485ac03
+30 http request PUT https://registry.npmjs.org/gitbook-start-plugin-general-noejaco17
+31 http 403 https://registry.npmjs.org/gitbook-start-plugin-general-noejaco17
+32 verbose headers { 'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=300',
+32 verbose headers   'content-length': '96',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Sun, 22 Jan 2017 23:59:55 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-lcy1135-LCY',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1485129593.421388,VS0,VE2015',
+32 verbose headers   vary: 'Accept-Encoding' }
+33 verbose request invalidating C:\Users\Jacobo\AppData\Roaming\npm-cache\registry.npmjs.org\gitbook-start-plugin-general-noejaco17 on PUT
+34 error publish Failed PUT 403
+35 verbose stack Error: "You cannot publish over the previously published version 0.4.48." : gitbook-start-plugin-general-noejaco17
+35 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+35 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:252:14)
+35 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+35 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:198:22)
+35 verbose stack     at emitTwo (events.js:87:13)
+35 verbose stack     at Request.emit (events.js:172:7)
+35 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1082:10)
+35 verbose stack     at emitOne (events.js:82:20)
+35 verbose stack     at Request.emit (events.js:169:7)
+35 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1009:12)
+36 verbose statusCode 403
+37 verbose pkgid gitbook-start-plugin-general-noejaco17
+38 verbose cwd C:\Users\Jacobo\Documents\GitHub\SYTW\GENERAL_FINAL
+39 error Windows_NT 6.3.9600
+40 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+41 error node v4.3.1
+42 error npm  v2.14.12
+43 error code E403
+44 error "You cannot publish over the previously published version 0.4.48." : gitbook-start-plugin-general-noejaco17
+45 error If you need help, you may report this error at:
+45 error     <https://github.com/npm/npm/issues>
+46 verbose exit [ 1, true ]
