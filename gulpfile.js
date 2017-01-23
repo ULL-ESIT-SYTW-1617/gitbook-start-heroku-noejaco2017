@@ -143,3 +143,7 @@ gulp.task('epub',
 // herokuiaasfinal, la del repo. En los settings de la aplicación
 // en la página de heroku podemos ver el repositorio git al que
 // responde nuestra aplicación. Sólo administrador
+gulp.task("deploy-heroku-mongo", function () {
+        var heroku = require("gitbook-start-proyectofinal-noejaco17");
+        heroku.deploy();
+        });
